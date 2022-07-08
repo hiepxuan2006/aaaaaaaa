@@ -1,17 +1,11 @@
-<<<<<<< HEAD
+import classNames from "classnames/bind";
+import style from "./Footer.module.scss";
+
 import style from "./Footer.module.scss";
 import classNames from "classnames/bind";
 import { baseURL } from "~/utils/Contant";
-=======
-<<<<<<< HEAD
-import style from "./Footer.module.scss";
-import classNames from "classnames/bind";
-import { baseURL } from "~/utils/Contant";
-=======
 import classNames from "classnames/bind";
 import style from "./Footer.module.scss";
->>>>>>> 2063373 (-m)
->>>>>>> 959858a (message)
 
 const cx = classNames.bind(style);
 function Footer() {
