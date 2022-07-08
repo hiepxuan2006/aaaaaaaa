@@ -1,0 +1,21 @@
+.wrapper {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 100vh;
+}
+.commit {
+  width: 100%;
+  margin-top: "40px";
+  background-image: url(https://mighty-dusk-66790.herokuapp.com/upload/banner-san-pham.jpg);
+  background-repeat: "no-repeat";
+  background-size: "cover";
+  height: "400px";
+}
+.commit {
+  img {
+    height: "200px ";
+    width: "200px";
+  }
+}

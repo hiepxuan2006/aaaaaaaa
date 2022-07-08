@@ -1,0 +1,118 @@
+.wrapper {
+  margin: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+.wrapper-content {
+  padding: 0 24px;
+  width: 1200px;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+  flex: 1;
+  gap: 10px;
+}
+.heading-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  font-size: 1.6rem;
+  width: 100%;
+  position: relative;
+  flex: 1;
+  p {
+    height: 3px;
+    flex: 1;
+    background-color: var(--primary-color);
+    font-weight: bolder;
+    display: block;
+    border: 1px solid rgb(204 204 204);
+  }
+  h1 {
+    position: absolute;
+    background-color: var(--primary-color);
+    padding: 2px 16px;
+    width: 30%;
+    text-align: center;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 2.6rem;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 1.5rem;
+  flex: 1;
+  p {
+    display: block;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .wrapper-content {
+    width: 1024px;
+  }
+  .heading-left {
+    p {
+      height: 3px;
+      flex: 1;
+      background-color: var(--primary-color);
+      font-weight: bolder;
+      display: block;
+      border: 1px solid rgb(204 204 204);
+    }
+    h1 {
+      position: absolute;
+      background-color: var(--primary-color);
+      padding: 4px 16px;
+      width: 30%;
+      text-align: center;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 2.4rem;
+    }
+  }
+}
+@media (max-width: 740px) {
+  .content {
+    width: 100vh;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  .heading-left {
+    p {
+      height: 3px;
+      flex: 1;
+      background-color: var(--primary-color);
+      font-weight: bolder;
+      display: block;
+      border: 1px solid rgb(204 204 204);
+    }
+    h1 {
+      position: absolute;
+      padding: 6px 16px;
+      width: 50%;
+      text-align: center;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 2.6rem;
+    }
+  }
+  .hidden-mobile {
+    display: none;
+  }
+  .link {
+    font-size: 2.8rem;
+  }
+  .heading {
+    padding: 0 12px;
+  }
+}

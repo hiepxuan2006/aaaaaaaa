@@ -1,0 +1,35 @@
+.wrapper {
+  margin-top: 50px;
+}
+.post {
+  display: flex;
+  gap: 16px;
+  padding: 10px;
+  border: 1px solid rgba(204, 204, 204);
+  border-radius: 20px;
+}
+.post + .post {
+  margin-top: 20px;
+}
+.image {
+  width: 300px;
+  height: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.content {
+  flex: 1;
+}
+.heading {
+  font-size: 1.6rem;
+}
+.desc {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
