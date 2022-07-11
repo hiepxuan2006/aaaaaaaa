@@ -1,22 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames/bind";
 import style from "./Login.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleLeft,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(style);
-function Login({ setShowLogin }) {
+function Login({ setShowRegister }) {
   const phone = require("~/assets/img/login.png");
-
+  const [showPass, setShowPass] = useState(false);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("body-left")}>
-        <div className={cx("back")}>
+        {/* <div className={cx("back")}>
           <FontAwesomeIcon
             icon={faCircleLeft}
-            onClick={() => setShowLogin(false)}
           />
+        </div> */}
+        <div className={cx("header")}>
+          <h2>Đăng nhập</h2>
         </div>
         <div className={cx("title")}>
           <h3>Đăng nhập bằng email</h3>
@@ -27,14 +33,34 @@ function Login({ setShowLogin }) {
             <input type="text" required placeholder="abc@gmail.com" />
           </div>
           <div className={cx("form-input")}>
-            <input type="password" required placeholder="Nhập mật khẩu" />
+            <input
+              type={showPass ? "text" : "password"}
+              required
+              placeholder="Nhập mật khẩu"
+            />
+            {showPass ? (
+              <FontAwesomeIcon
+                onClick={() => setShowPass(false)}
+                className={cx("hide-pasword")}
+                icon={faEye}
+              />
+            ) : (
+              <FontAwesomeIcon
+                onClick={() => setShowPass(true)}
+                className={cx("show-pasword")}
+                icon={faEyeSlash}
+              />
+            )}
           </div>
           <div className={cx("action-btn")}>
             <button type="submit">Đăng nhập</button>
           </div>
         </form>
         <div className={cx("forgot-password")}>
-          <a href="">Quên mật khẩu ?</a>
+          <div className={cx("login")} onClick={() => setShowRegister(true)}>
+            Đăng ký
+          </div>
+          <div>Quên mật khẩu ?</div>
         </div>
       </div>
       {/* <div className={cx("body-right")}>

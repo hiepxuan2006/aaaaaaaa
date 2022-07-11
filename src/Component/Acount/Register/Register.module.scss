@@ -1,32 +1,55 @@
-.title {
-  padding-top: 20px;
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 .body {
-  display: flex;
-  // align-items: center;
-  gap: 10px;
-  justify-content: space-between;
+  padding-left: 20px;
 }
-.body-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
+.title {
+  font-size: 2rem;
+  margin: 20px 0;
+  cursor: pointer;
 }
-.phone {
-  margin: 0 20px;
+
+.form-input {
+  padding-top: 16px;
+  width: 100%;
+  position: relative;
   input {
     border-radius: 10px;
     width: 300px;
     padding: 10px 16px;
     outline: none;
+    font-size: 1.8rem;
+    font-size: 1.8rem;
     border: none;
     border-bottom: 1px solid #ccc;
   }
 }
+.hide-pasword {
+  font-size: 1.6rem;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  right: 10px;
+  width: 20px;
+  cursor: pointer;
+  color: #5f5f5f;
+}
+.show-pasword {
+  font-size: 1.6rem;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  right: 10px;
+  width: 20px;
+  cursor: pointer;
+  color: #5f5f5f;
+}
 .action-resume {
-  padding: 20px;
-
+  padding: 20px 0;
   div {
     text-align: center;
     cursor: pointer;
@@ -41,8 +64,8 @@
   }
 }
 .login-email {
-  padding: 10px;
   p {
+    font-weight: 500;
     font-size: 1.4rem;
     cursor: pointer;
   }
@@ -107,6 +130,7 @@
 }
 .role {
   font-size: 1.2rem;
+  padding-top: 16px;
 }
 .body-right {
   display: flex;

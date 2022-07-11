@@ -8,7 +8,7 @@ import Register from "./Register";
 
 const cx = classNames.bind(style);
 function Acount() {
-  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [close, setClose] = useState(true);
   const { showAcount, setShowAcount } = useContext(DataContext);
@@ -21,15 +21,14 @@ function Acount() {
         className={`${cx("model-overlay")} ${showAcount ? " " : cx("close")}`}
       ></div>
       <div className={cx("content")}>
-        {!showLogin && !showConfirm && (
-          <Register
-            setShowLogin={setShowLogin}
-            setShowConfirm={setShowConfirm}
-          />
+        {!showRegister && !showConfirm && (
+          <Login setShowRegister={setShowRegister} />
         )}
-        {showLogin && !showConfirm && <Login setShowLogin={setShowLogin} />}
+        {showRegister && !showConfirm && (
+          <Register setShowRegister={setShowRegister} />
+        )}
 
-        {!showLogin && showConfirm && (
+        {!showRegister && showConfirm && (
           <ConfirmOtp setShowConfirm={setShowConfirm} />
         )}
         <div className={cx("body-right")}>

@@ -31,7 +31,7 @@ function Search(props) {
       setLoading(true);
       const paramString = queryString.stringify(debounce);
       const data = await httpRequest.get(
-        `/product/search?q=${debounce}&type=less`
+        `/product/search?q=${debounce.trim()}&type=less`
       );
 
       setSearchResult(data.data);
