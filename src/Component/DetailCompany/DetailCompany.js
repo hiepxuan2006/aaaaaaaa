@@ -11,7 +11,7 @@ function DetailCompany(props) {
   useEffect(() => {
     const fethAPi = async () => {
       const result = await htpRequest.get(`company/ct/${company}`);
-      setData(result);
+      setData(result.data);
     };
     fethAPi();
   }, [company]);

@@ -12,7 +12,11 @@ function ListProduct() {
   useEffect(() => {
     const fetchApi = async () => {
       try {
-        const result = await httpRequest.get("product");
+        const result = await httpRequest.get("product", {
+          params: {
+            limit: 8,
+          },
+        });
         setData(result.data);
       } catch (error) {}
     };
@@ -27,7 +31,7 @@ function ListProduct() {
             <h1>Sản phẩm nổi bật</h1>
           </div>
           <div className={cx("heading-right")}>
-            <Link to={"/"} className={cx("link")}>
+            <Link to={"/cua-hang"} className={cx("link")}>
               <p>Xem tất cả</p>
               <FontAwesomeIcon icon={faAngleRight} />
             </Link>

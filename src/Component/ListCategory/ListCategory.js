@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "tippy.js/dist/tippy.css";
+import { baseURL } from "~/utils/Contant";
 import * as httpRequest from "~/utils/httpRequest";
 import style from "./ListCategory.module.scss";
 
@@ -18,6 +19,7 @@ function ListCategory() {
     };
     fetchApi();
   }, []);
+  console.log(data);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("wrapper-content")}>
@@ -36,10 +38,7 @@ function ListCategory() {
                       className={`${cx("link")}`}
                     >
                       <div className={cx("logo-img", "hidden-mobile")}>
-                        <img
-                          src="https://mighty-dusk-66790.herokuapp.com/upload/do-kho-hover.png"
-                          alt=""
-                        />
+                        <img src={`${baseURL}/${item.image_path}`} alt="" />
                       </div>
                       <div
                         className={cx(

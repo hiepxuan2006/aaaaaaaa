@@ -10,7 +10,7 @@ function Company() {
   useEffect(() => {
     const fethAPi = async () => {
       const result = await httpRequest.get("company");
-      setData(result);
+      setData(result.data);
     };
     fethAPi();
   }, []);

@@ -37,9 +37,9 @@ function Login({ setShowLogin }) {
           <a href="">Quên mật khẩu ?</a>
         </div>
       </div>
-      <div className={cx("body-right")}>
+      {/* <div className={cx("body-right")}>
         <img src={phone} alt="" />
-      </div>
+      </div> */}
     </div>
   );
 }

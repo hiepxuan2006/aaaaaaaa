@@ -4,14 +4,12 @@ import {
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import HeadlessTippy from "@tippyjs/react/headless";
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { DataContext } from "../DataProvider";
 import style from "./Header.module.scss";
 
 import classNames from "classnames/bind";
-import { Wrapper } from "../Popper";
 import Search from "./Search/Search";
 const cx = classNames.bind(style);
 function Header() {

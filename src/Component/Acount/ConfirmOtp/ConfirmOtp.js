@@ -41,9 +41,9 @@ function ConfirmOtp({ setShowConfirm }) {
           <span>Mã xác minh có hiệu lực trong 15 phút</span>
         </div>
       </div>
-      <div className={cx("body-right")}>
+      {/* <div className={cx("body-right")}>
         <img src={phone} alt="" />
-      </div>
+      </div> */}
     </div>
   );
 }

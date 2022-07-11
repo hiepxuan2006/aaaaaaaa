@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./Checkout.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
+import { DataContext } from "../DataProvider";
 
 const cx = classNames.bind(style);
 function CheckoutLeft(props) {
+  const { theme, cart, setCLose, showNavbar, setShowNavbar, setShowAcount } =
+    useContext(DataContext);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("shipper")}>
@@ -13,7 +16,9 @@ function CheckoutLeft(props) {
         </div>
         <div className={cx("is-login")}>
           <p>Bạn đã có tài khản ?</p>
-          <Link to={"/"}>Đăng nhập</Link>
+          <div className={cx("login")} onClick={() => setShowAcount(true)}>
+            Đăng nhập
+          </div>
         </div>
         <div className={cx("infor")}>
           <div className={cx("name")}>

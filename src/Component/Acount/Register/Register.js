@@ -53,9 +53,9 @@ function Register({ setShowLogin, setShowConfirm }) {
             <span>Bằng việc tiếp tục, bạn đã chấp nhận điều khoản sử dụng</span>
           </div>
         </div>
-        <div className={cx("body-right")}>
+        {/* <div className={cx("body-right")}>
           <img src={phone} alt="" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

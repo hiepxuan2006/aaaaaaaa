@@ -12,6 +12,8 @@ function Acount() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [close, setClose] = useState(true);
   const { showAcount, setShowAcount } = useContext(DataContext);
+  const phone = require("~/assets/img/login.png");
+
   return (
     <div className={`${cx("model")} ${showAcount ? " " : cx("close")}`}>
       <div
@@ -30,6 +32,9 @@ function Acount() {
         {!showLogin && showConfirm && (
           <ConfirmOtp setShowConfirm={setShowConfirm} />
         )}
+        <div className={cx("body-right")}>
+          <img src={phone} alt="" />
+        </div>
       </div>
     </div>
   );
