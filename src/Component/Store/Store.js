@@ -1,8 +1,11 @@
+import { faRotate } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as httpRequest from "~/utils/httpRequest";
 import ItemProduct from "../ListProduct/ItemProduct";
+import Pagination from "../Pagination";
 import style from "./Store.module.scss";
 
 const cx = classNames.bind(style);
@@ -10,6 +13,20 @@ const cx = classNames.bind(style);
 function Store() {
   let [data, setData] = useState([]);
   const [valueSort, setValueSort] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [pagination, setPagination] = useState({
+    page: 1,
+    limit: 1,
+    totalRows: 1,
+  });
+  const [filter, setFilter] = useState({
+    page: 1,
+    limit: 6,
+  });
+  const handlePageChange = (newPage) => {
+    setFilter({ ...filter, page: newPage });
+    setPagination({ ...pagination, page: newPage });
+  };
   const slug = useParams("");
   const handleSort = (e) => {
     setValueSort(e.target.value);
@@ -18,19 +35,22 @@ function Store() {
     let result = [];
     const fetchApi = async () => {
       try {
+        setLoading(true);
         if (!!slug.category) {
           if (valueSort !== "") {
             result = await httpRequest.get("product/list", {
               params: {
-                category: slug.category,
+                // category: slug.category,
                 sort: "price",
                 type: valueSort === "price" ? "ASC" : "DESC",
+                page: pagination.page,
               },
             });
           } else {
             result = await httpRequest.get("product/list", {
               params: {
                 category: slug.category,
+                page: pagination.page,
               },
             });
           }
@@ -40,6 +60,7 @@ function Store() {
               params: {
                 category: slug.category,
                 sort: "price",
+                page: pagination.page,
                 type: valueSort === "price" ? "ASC" : "DESC",
               },
             });
@@ -47,22 +68,27 @@ function Store() {
             result = await httpRequest.get("product", {
               params: {
                 sort: valueSort,
+                page: pagination.page,
               },
             });
           }
         }
-        setData(result);
+
+        setData(result.data);
+        setPagination({
+          ...pagination,
+          limit: result.limit,
+          totalRows: result.totalRows,
+        });
+        setLoading(false);
       } catch (error) {}
     };
     fetchApi();
-  }, [slug, valueSort]);
-
+  }, [slug, valueSort, pagination.page]);
+  console.log("loading", loading);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("header")}>
-        {/* <div className="shop__heading">
-          <h3>Trang chủ</h3>
-        </div> */}
         <form className={cx("shop-option")}>
           <select
             defaultValue={"DEFAULT"}
@@ -79,18 +105,25 @@ function Store() {
           </select>
         </form>
       </div>
-      <div className={cx("content")}>
-        <div className="row">
-          {data &&
-            data.map((item, index) => {
-              return (
-                <div className="col l-4 m-4 c-6" key={index}>
-                  <ItemProduct item={item} />
-                </div>
-              );
-            })}
+      {loading ? (
+        <div className={cx("loading")}>
+          <FontAwesomeIcon icon={faRotate} />
         </div>
-      </div>
+      ) : (
+        <div className={cx("content")}>
+          <div className="row">
+            {data &&
+              data.map((item, index) => {
+                return (
+                  <div className="col l-4 m-4 c-6" key={index}>
+                    <ItemProduct item={item} />
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      )}
+      <Pagination pagination={pagination} onPageChange={handlePageChange} />
     </div>
   );
 }

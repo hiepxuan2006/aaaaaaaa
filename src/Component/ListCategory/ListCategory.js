@@ -13,7 +13,7 @@ function ListCategory() {
     const fetchApi = async () => {
       try {
         const result = await httpRequest.get("category");
-        setData(result);
+        setData(result.data);
       } catch (error) {}
     };
     fetchApi();

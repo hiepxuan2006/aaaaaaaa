@@ -13,7 +13,7 @@ function ListProduct() {
     const fetchApi = async () => {
       try {
         const result = await httpRequest.get("product");
-        setData(result);
+        setData(result.data);
       } catch (error) {}
     };
     fetchApi();

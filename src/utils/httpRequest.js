@@ -1,12 +1,16 @@
 import axios from "axios";
 
+// const httpRequest = axios.create({
+//   baseURL: "https://hx-farm.herokuapp.com/api/",
+// });
 const httpRequest = axios.create({
-  baseURL: "https://hx-farm.herokuapp.com/api/",
+  baseURL: "http://localhost:8080/api/",
 });
-
 export const get = async (path, options = {}) => {
-  const response = await httpRequest.get(path, options);
-  return response.data.data;
+  let response = await httpRequest.get(path, options);
+  if (response.status) {
+    return response.data;
+  }
 };
 
 export default httpRequest;

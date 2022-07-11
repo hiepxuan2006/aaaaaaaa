@@ -3,7 +3,7 @@ import HeadlessTippy from "@tippyjs/react/headless";
 import { useEffect, useRef, useState } from "react";
 
 import style from "./Search.module.scss";
-
+import queryString from "query-string";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { Wrapper } from "~/Component/Popper";
@@ -29,14 +29,12 @@ function Search(props) {
       }
 
       setLoading(true);
-      const data = await httpRequest.get("/product/search", {
-        params: {
-          q: debounce,
-          type: "less",
-        },
-      });
+      const paramString = queryString.stringify(debounce);
+      const data = await httpRequest.get(
+        `/product/search?q=${debounce}&type=less`
+      );
 
-      setSearchResult(data);
+      setSearchResult(data.data);
       setLoading(false);
     };
     fethApi();

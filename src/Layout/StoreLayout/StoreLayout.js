@@ -17,7 +17,7 @@ function StoreLayout({ children, data }) {
       <div className={cx("wrapper")}>
         <Header />
         <div className={cx("container")}>
-          <div class="row">
+          <div className="row">
             <div className="col l-3 m-2 c-0">
               <div className={cx("left")}>
                 <SideBar type={data} />

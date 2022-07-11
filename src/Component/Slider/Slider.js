@@ -15,7 +15,7 @@ function Slider() {
   useEffect(() => {
     const fethApi = async () => {
       const result = await httpRequest.get("slider");
-      setData(result);
+      setData(result.data);
     };
     fethApi();
   }, []);

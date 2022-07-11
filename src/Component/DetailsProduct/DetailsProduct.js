@@ -36,8 +36,8 @@ function DetailsProduct() {
     const fethApi = async () => {
       const result = await httpRequest.get(`product/san-pham/${product}`);
       const resultLike = await httpRequest.get(`product/random`);
-      setData(result);
-      setListProduct(resultLike);
+      setData(result.data);
+      setListProduct(resultLike.data);
     };
     fethApi();
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

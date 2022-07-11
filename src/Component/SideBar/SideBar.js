@@ -25,7 +25,7 @@ function SideBar({ type }) {
           result = await httpRequest.get("category");
           setTitle("Danh mục sản phẩm");
         }
-        setData(result);
+        setData(result.data);
       } catch (error) {}
     };
     fetchApi();

@@ -12,7 +12,6 @@ function Acount() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [close, setClose] = useState(true);
   const { showAcount, setShowAcount } = useContext(DataContext);
-  console.log(showLogin);
   return (
     <div className={`${cx("model")} ${showAcount ? " " : cx("close")}`}>
       <div

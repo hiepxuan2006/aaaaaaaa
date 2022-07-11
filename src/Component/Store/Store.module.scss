@@ -12,5 +12,26 @@
   outline: none;
   border-radius: 20px;
 }
+.loading {
+  font-size: 2.8rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--white);
+  animation: spiner 1s linear infinite;
+  color: #000;
+}
+@keyframes spiner {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(380deg);
+  }
+}
 .content {
 }
