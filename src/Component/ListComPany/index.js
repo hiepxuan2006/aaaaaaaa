@@ -1,1 +1,1 @@
-export { default as ListCompany } from "./ListCompany";
+export { default as ListCompany } from './ListCompany';

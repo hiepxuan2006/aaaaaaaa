@@ -1,1 +1,1 @@
-export { default } from "./ConfirmOtp";
+export { default } from './ConfirmOtp';

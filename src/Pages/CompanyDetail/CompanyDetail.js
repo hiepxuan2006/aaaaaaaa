@@ -1,8 +1,8 @@
-import React from "react";
-import DetailCompany from "~/Component/DetailCompany";
+import React from 'react';
+import DetailCompany from '~/Component/DetailCompany';
 
 function CompanyDetail(props) {
-  return <DetailCompany />;
+    return <DetailCompany />;
 }
 
 export default CompanyDetail;

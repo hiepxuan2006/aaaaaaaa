@@ -1,7 +1,7 @@
-import DetailsProduct from "~/Component/DetailsProduct";
+import DetailsProduct from '~/Component/DetailsProduct';
 
 function ProductDeatil() {
-  return <DetailsProduct />;
+    return <DetailsProduct />;
 }
 
 export default ProductDeatil;

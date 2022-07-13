@@ -1,1 +1,1 @@
-export { default } from "./AcountLayout";
+export { default } from './AcountLayout';

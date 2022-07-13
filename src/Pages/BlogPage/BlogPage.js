@@ -1,11 +1,11 @@
-import Blog from "~/Component/Blog/Blog";
+import Blog from '~/Component/Blog/Blog';
 
 function BlogPage() {
-  return (
-    <div>
-      <Blog />
-    </div>
-  );
+    return (
+        <div>
+            <Blog />
+        </div>
+    );
 }
 
 export default BlogPage;

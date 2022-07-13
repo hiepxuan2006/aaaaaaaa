@@ -1,87 +1,87 @@
-@import "normalize.css";
-@import "./grid.scss";
+@import 'normalize.css';
+@import './grid.scss';
 :root {
-  --black: #000;
-  --white: #fff;
-  --primary-color: #f85e34;
-  --boxShadow: rgb(204 204 204) 0px 0px 10px;
+    --black: #000;
+    --white: #fff;
+    --primary-color: #f85e34;
+    --boxShadow: rgb(204 204 204) 0px 0px 10px;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-size: 1.6rem;
-  font-family: "Roboto", sans-serif;
-  scroll-behavior: smooth;
-  width: 100%;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    width: 100%;
 }
 
 a {
-  color: var(--black);
-  text-decoration: none;
-  display: block;
+    color: var(--black);
+    text-decoration: none;
+    display: block;
 }
 .app {
-  @media (max-width: 740px) {
-    width: 100vh;
-  }
+    @media (max-width: 740px) {
+        width: 100vh;
+    }
 }
 .darkTheme {
-  background-color: rgba(7, 49, 85, 0.942) !important;
-  color: #fff !important;
-  box-shadow: var(--boxShadow);
+    background-color: rgba(7, 49, 85, 0.942) !important;
+    color: #fff !important;
+    box-shadow: var(--boxShadow);
 }
 .darkTheme a {
-  // background-color: rgba(7, 49, 85, 0.942) !important;
-  color: #fff;
-  // box-shadow: var(--boxShadow);
+    // background-color: rgba(7, 49, 85, 0.942) !important;
+    color: #fff;
+    // box-shadow: var(--boxShadow);
 }
 
 .lightTheme {
-  background-color: #fff;
-  color: #111;
-  box-shadow: var(--boxShadow);
+    background-color: #fff;
+    color: #111;
+    box-shadow: var(--boxShadow);
 }
 .Toastify,
 .toast__item {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10002;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10002;
 }
 #tippy-4 {
-  box-shadow: var(--boxShadow);
+    box-shadow: var(--boxShadow);
 }
 .loading-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  svg {
-    font-size: 2.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    color: var(--white);
-    animation: spiner 2s linear infinite;
-    color: #000;
-  }
+    padding-top: 20px;
+    svg {
+        font-size: 2.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var(--white);
+        animation: spiner 2s linear infinite;
+        color: #000;
+    }
 }
 @keyframes spiner {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(380deg);
-  }
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(380deg);
+    }
 }

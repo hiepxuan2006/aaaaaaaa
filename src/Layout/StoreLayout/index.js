@@ -1,1 +1,1 @@
-export { default } from "./StoreLayout";
+export { default } from './StoreLayout';

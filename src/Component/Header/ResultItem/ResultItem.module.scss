@@ -1,34 +1,34 @@
 .wrapper {
-  display: flex;
-  padding: 6px 16px;
-  cursor: pointer;
-  gap: 10px;
-  border-radius: 10px;
-  &:hover {
-    background: rgba(22, 24, 35, 0.222);
-  }
+    display: flex;
+    padding: 6px 16px;
+    cursor: pointer;
+    gap: 10px;
+    border-radius: 10px;
+    &:hover {
+        background: rgba(22, 24, 35, 0.222);
+    }
 }
 .image {
-  height: 60px;
-  width: 60px;
-  overflow: hidden;
-  border-radius: 50%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 .name {
-  span {
-    color: var(--black);
-  }
+    span {
+        color: var(--black);
+    }
 }
 .price {
-  span {
-    color: var(--black);
-  }
+    span {
+        color: var(--black);
+    }
 }
 .info {
-  flex: 1;
+    flex: 1;
 }

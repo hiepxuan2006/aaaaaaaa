@@ -1,1 +1,1 @@
-export { publicRoute } from "./Route.js";
+export { publicRoute } from './Route.js';

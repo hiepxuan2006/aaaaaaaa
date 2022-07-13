@@ -1,1 +1,1 @@
-export { default } from "./ProductDeatil";
+export { default } from './ProductDeatil';
