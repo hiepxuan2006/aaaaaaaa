@@ -1,4 +1,4 @@
-import { faRotate } from "@fortawesome/free-solid-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
@@ -107,7 +107,7 @@ function Store() {
       </div>
       {loading ? (
         <div className={cx("loading")}>
-          <FontAwesomeIcon icon={faRotate} />
+          <FontAwesomeIcon icon={faSpinner} />
         </div>
       ) : (
         <div className={cx("content")}>

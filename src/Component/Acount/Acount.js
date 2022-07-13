@@ -1,3 +1,5 @@
+import { faCircleXmark, faClose } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { useContext, useState } from "react";
 import { DataContext } from "../DataProvider";
@@ -12,6 +14,7 @@ function Acount() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [close, setClose] = useState(true);
   const { showAcount, setShowAcount } = useContext(DataContext);
+  const resetForm = () => {};
   const phone = require("~/assets/img/login.png");
 
   return (
@@ -21,8 +24,15 @@ function Acount() {
         className={`${cx("model-overlay")} ${showAcount ? " " : cx("close")}`}
       ></div>
       <div className={cx("content")}>
+        <div className={cx("close-modal")} onClick={() => setShowAcount(false)}>
+          <FontAwesomeIcon icon={faCircleXmark} />
+        </div>
         {!showRegister && !showConfirm && (
-          <Login setShowRegister={setShowRegister} />
+          <Login
+            setShowRegister={setShowRegister}
+            setShowAcount={setShowAcount}
+            showAcount={showAcount}
+          />
         )}
         {showRegister && !showConfirm && (
           <Register setShowRegister={setShowRegister} />

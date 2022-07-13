@@ -22,14 +22,22 @@ function Register({ setShowRegister, setShowConfirm }) {
               <input
                 type="text"
                 required
-                name="phone"
-                placeholder="Nhập số email"
+                name="name"
+                placeholder="Nhập username"
+              />
+            </div>
+            <div className={cx("form-input")}>
+              <input
+                type="text"
+                required
+                name="email"
+                placeholder="Nhập email"
               />
             </div>
             <div className={cx("form-input")}>
               <input
                 required
-                name="phone"
+                name="password"
                 placeholder="Nhập mật khẩu"
                 type={showPass ? "text" : "password"}
               />
@@ -51,7 +59,7 @@ function Register({ setShowRegister, setShowConfirm }) {
               <input
                 type={showPassConf ? "text" : "password"}
                 required
-                name="phone"
+                name="passwordConfirm"
                 placeholder="Nhập lại mật khẩu"
               />
               {showPassConf ? (
@@ -97,13 +105,7 @@ function Register({ setShowRegister, setShowConfirm }) {
               <FontAwesomeIcon icon={faG} />
             </div>
           </div> */}
-          <div className={cx("role")}>
-            <span>Bằng việc tiếp tục, bạn đã chấp nhận điều khoản sử dụng</span>
-          </div>
         </div>
-        {/* <div className={cx("body-right")}>
-          <img src={phone} alt="" />
-        </div> */}
       </div>
     </div>
   );

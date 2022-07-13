@@ -1,5 +1,8 @@
 // @flow
 import * as React from "react";
+import { TOKEN_NAME } from "~/utils/Contant";
+
+import * as httpRequest from "~/utils/httpRequest";
 
 export const DataContext = React.createContext();
 const dataCart = JSON.parse(localStorage.getItem("dataCart"));
@@ -10,6 +13,9 @@ export const DataProvider = (props) => {
   const [showNavbar, setShowNavbar] = React.useState(false);
   const [theme, setTheme] = React.useState("lightTheme");
   const [showAcount, setShowAcount] = React.useState(false);
+  const [user, setUser] = React.useState({});
+  const [isLogin, setIsLogin] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const tongleTheme = () => {
     setTheme(theme === "darkTheme" ? "lightTheme" : "darkTheme");
   };
@@ -49,13 +55,36 @@ export const DataProvider = (props) => {
 
     setCart(data);
   };
+  const loadUser = async () => {
+    if (localStorage[TOKEN_NAME]) {
+      httpRequest.setAuthToken(localStorage[TOKEN_NAME]);
+    }
 
+    try {
+      setLoading(true);
+      const results = await httpRequest.get(`acount/`);
+      setUser(results.user);
+      setIsLogin(true);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      localStorage.removeItem(TOKEN_NAME);
+      httpRequest.setAuthToken(null);
+    }
+  };
+  React.useEffect(() => {
+    loadUser();
+  }, [localStorage[TOKEN_NAME]]);
+  console.log(loading);
   React.useEffect(() => {
     localStorage.setItem("dataCart", JSON.stringify(cart));
   }, [cart]);
   const value = {
     cart,
+    user,
+    loading,
     theme,
+    isLogin,
     tongleTheme,
     addCart: addCart,
     addQuantityCart,

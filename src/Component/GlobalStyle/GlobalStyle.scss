@@ -60,3 +60,28 @@ a {
 #tippy-4 {
   box-shadow: var(--boxShadow);
 }
+.loading-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  svg {
+    font-size: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--white);
+    animation: spiner 2s linear infinite;
+    color: #000;
+  }
+}
+@keyframes spiner {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(380deg);
+  }
+}

@@ -12,6 +12,8 @@ import style from "./ListComPany.module.scss";
 const cx = classNames.bind(style);
 function ListCompany() {
   const [data, setData] = useState([]);
+  const [slidesView, setSlidesView] = useState("");
+
   useEffect(() => {
     const fethAPi = async () => {
       const result = await httpRequest.get("company");
@@ -34,9 +36,13 @@ function ListCompany() {
     }
 
     window.addEventListener("resize", handleResize);
+    if (screen.width < 740) {
+      setSlidesView(2);
+    } else if (1024 > screen.width > 740) {
+      setSlidesView(2);
+    }
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   return (
     <div className={cx("wrapper")}>
       <div className={cx("heading")}>

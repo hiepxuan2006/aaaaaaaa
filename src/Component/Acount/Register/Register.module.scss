@@ -9,7 +9,10 @@
 }
 .title {
   font-size: 2rem;
-  margin: 20px 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -130,10 +133,7 @@
   border: 1px solid #ccc;
   cursor: pointer;
 }
-.role {
-  font-size: 1.2rem;
-  padding-top: 16px;
-}
+
 .body-right {
   display: flex;
   align-items: center;

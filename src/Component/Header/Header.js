@@ -11,6 +11,7 @@ import style from "./Header.module.scss";
 
 import classNames from "classnames/bind";
 import Search from "./Search/Search";
+import UserLogin from "./UserLogin";
 const cx = classNames.bind(style);
 function Header() {
   const logo = require("~/assets/img/logo-farm.png");
@@ -20,8 +21,16 @@ function Header() {
     { navItem: "Danh bạ nhà nông", path: "/danh-ba-nha-nong" },
     { navItem: "Blog", path: "/blog" },
   ];
-  const { theme, cart, setCLose, showNavbar, setShowNavbar, setShowAcount } =
-    useContext(DataContext);
+  const {
+    theme,
+    cart,
+    setCLose,
+    showNavbar,
+    setShowNavbar,
+    setShowAcount,
+    isLogin,
+    user,
+  } = useContext(DataContext);
   const [scrollY, setScrollY] = useState("");
   useEffect(() => {
     const setScrolly = () => {
@@ -29,7 +38,6 @@ function Header() {
     };
     window.addEventListener("scroll", setScrolly);
   }, [scrollY]);
-  const [visible, setVisible] = useState(false);
   const handleShow = () => {
     setCLose(true);
   };
@@ -92,9 +100,13 @@ function Header() {
           </div>
           {/* </HeadlessTippy> */}
 
-          <div onClick={() => setShowAcount(true)} className={cx("user")}>
-            <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
-          </div>
+          {isLogin ? (
+            <UserLogin />
+          ) : (
+            <div onClick={() => setShowAcount(true)} className={cx("user")}>
+              <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
+            </div>
+          )}
         </div>
       </div>
     </header>
