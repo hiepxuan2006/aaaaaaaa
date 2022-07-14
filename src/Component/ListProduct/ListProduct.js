@@ -14,7 +14,6 @@ function ListProduct() {
          try {
             const params = { limit: 8 };
             const result = await productService.getAll(params);
-            console.log(result.data);
             setData(result.data);
          } catch (error) {
             console.log(error);

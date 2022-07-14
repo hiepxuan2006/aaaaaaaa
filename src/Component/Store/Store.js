@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import productService from '~/service/productService';
-import * as httpRequest from '~/utils/httpRequest';
 import ItemProduct from '../ListProduct/ItemProduct';
 import Pagination from '../Pagination';
 import style from './Store.module.scss';
