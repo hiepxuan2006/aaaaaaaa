@@ -1,4 +1,4 @@
-const { default: httpRequest } = require('~/utils/httpRequest');
+import httpRequest from '~/utils/httpRequest';
 
 class ProductService {
    getAll = (params) => {
