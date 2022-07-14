@@ -6,19 +6,20 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import ItemProduct from './ItemProduct';
 import * as httpRequest from '~/utils/httpRequest';
 import { useEffect, useState } from 'react';
+import productService from '~/service/productService';
 const cx = classNames.bind(style);
 function ListProduct() {
     let [data, setData] = useState([]);
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                const result = await httpRequest.get('product', {
-                    params: {
-                        limit: 8,
-                    },
-                });
+                const params = { limit: 8 };
+                const result = await productService.getAll(params);
+                console.log(result.data);
                 setData(result.data);
-            } catch (error) {}
+            } catch (error) {
+                console.log(error);
+            }
         };
         fetchApi();
     }, []);

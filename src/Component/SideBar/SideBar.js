@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import categoryService from '~/service/CategoryService';
 import * as httpRequest from '~/utils/httpRequest';
 import style from './SideBar.module.scss';
 
@@ -16,13 +17,13 @@ function SideBar({ type }) {
             try {
                 let result;
                 if (type === 'product') {
-                    result = await httpRequest.get('category');
+                    result = await categoryService.getAll('');
                     setTitle('Danh mục sản phẩm');
                 } else if (type === 'blog') {
                     result = await httpRequest.get('categorypost');
                     setTitle('Chuyên mục bài biết');
                 } else {
-                    result = await httpRequest.get('category');
+                    result = await categoryService.getAll('');
                     setTitle('Danh mục sản phẩm');
                 }
                 setData(result.data);
@@ -44,7 +45,9 @@ function SideBar({ type }) {
                                     className={cx('item')}
                                     to={`/cua-hang/${item.slug}`}
                                 >
-                                    <FontAwesomeIcon icon={faAngleRight} />
+                                    <FontAwesomeIcon
+                                        icon={faAngleRight}
+                                    />
                                     <p>{item.name}</p>
                                 </Link>
                             </li>

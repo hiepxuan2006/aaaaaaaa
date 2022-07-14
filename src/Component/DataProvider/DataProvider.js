@@ -59,7 +59,7 @@ export const DataProvider = (props) => {
         if (localStorage[TOKEN_NAME]) {
             httpRequest.setAuthToken(localStorage[TOKEN_NAME]);
         }
-
+        console.log(localStorage[TOKEN_NAME]);
         try {
             setLoading(true);
             const results = await httpRequest.get(`acount/`);
@@ -67,15 +67,15 @@ export const DataProvider = (props) => {
             setIsLogin(true);
             setLoading(false);
         } catch (error) {
-            setLoading(false);
+            setIsLogin(false);
             localStorage.removeItem(TOKEN_NAME);
             httpRequest.setAuthToken(null);
+            setLoading(false);
         }
     };
     React.useEffect(() => {
         loadUser();
     }, [localStorage[TOKEN_NAME]]);
-    console.log(loading);
     React.useEffect(() => {
         localStorage.setItem('dataCart', JSON.stringify(cart));
     }, [cart]);

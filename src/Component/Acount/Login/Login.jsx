@@ -1,5 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import {
+    faEye,
+    faEyeSlash,
+    faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useContext } from 'react';
@@ -16,6 +20,7 @@ function Login({ setShowRegister }) {
     const [valueForm, setValueForm] = useState({ email: '', password: '' });
     const { email, password } = valueForm;
     const [error, sertError] = useState({});
+    const [loading, setLoading] = useState(false);
     const handleInput = (e) => {
         e.preventDefault();
         setValueForm({ ...valueForm, [e.target.name]: e.target.value });
@@ -51,8 +56,15 @@ function Login({ setShowRegister }) {
     ];
 
     const validator = new Validator(rules);
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        let expires = 'expires=' + d.toUTCString();
+        document.cookie = cname + '=' + cvalue + ';' + expires;
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         const resultError = validator.validate(valueForm);
         sertError(resultError);
         if (
@@ -61,8 +73,13 @@ function Login({ setShowRegister }) {
         ) {
             const result = await httpRequest.post('acount/login', valueForm);
             localStorage.setItem(TOKEN_NAME, result.token);
+            // setCookie('token', result.token, 3);
             setValueForm({ email: '', password: '' });
+            setLoading(false);
             setShowAcount(false);
+        } else {
+            setLoading(false);
+            return;
         }
     };
     return (
@@ -119,7 +136,13 @@ function Login({ setShowRegister }) {
                         )}
                     </div>
                     <div className={cx('action-btn')}>
-                        <button type="submit">Đăng nhập</button>
+                        {loading ? (
+                            <div className={cx('loading')}>
+                                <FontAwesomeIcon icon={faSpinner} />
+                            </div>
+                        ) : (
+                            <button type="submit">Đăng nhập</button>
+                        )}
                     </div>
                 </form>
                 <div className={cx('forgot-password')}>

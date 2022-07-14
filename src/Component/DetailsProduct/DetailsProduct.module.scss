@@ -1,235 +1,238 @@
 .wrapper {
-    width: 100%;
-    overflow: hidden;
+   width: 100%;
+   overflow: hidden;
 }
 .infor {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
-    &::after {
-    }
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   gap: 32px;
+   &::after {
+   }
 }
 .image {
-    height: 240px;
-    width: 240px;
-    overflow: hidden;
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border: 2px solid rgb(204, 204, 204);
-        border-radius: 20px;
-    }
+   height: 240px;
+   width: 240px;
+   overflow: hidden;
+   img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border: 2px solid rgb(204, 204, 204);
+      border-radius: 20px;
+   }
 }
 .content {
-    flex: 1;
-    user-select: none;
+   flex: 1;
+   user-select: none;
 }
 .heading {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgb(204, 204, 204);
+   font-size: 1.6rem;
+   margin-bottom: 20px;
+   padding: 8px 0;
+   border-bottom: 1px solid rgb(204, 204, 204);
 }
 .action-buy {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        bottom: -10px;
-        border-bottom: 2px solid rgb(204 204 204);
-    }
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+   &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      bottom: -10px;
+      border-bottom: 2px solid rgb(204 204 204);
+   }
 }
 .btn-quantity {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    user-select: none;
+   display: flex;
+   gap: 12px;
+   align-items: center;
+   user-select: none;
 }
 .minus,
 .plus {
-    padding: 6px;
-    font-size: 1.8rem;
-    border-radius: 10px;
-    background-color: var(--primary-color);
-    box-shadow: rgb(204 204 204) 0px 0px 10px;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-        transition: all ease-in-out 0.3s;
-    }
+   padding: 6px;
+   font-size: 1.8rem;
+   border-radius: 10px;
+   background-color: var(--primary-color);
+   box-shadow: rgb(204 204 204) 0px 0px 10px;
+   &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: all ease-in-out 0.3s;
+   }
 }
 .quantity {
-    padding: 4px 6px;
-    border: 2px solid rgb(204, 204, 204);
-    font-size: 2rem;
-    font-weight: 400;
-    border-radius: 10px;
-    width: 50px;
-    text-align: center;
+   padding: 4px 6px;
+   border: 2px solid rgb(204, 204, 204);
+   font-size: 2rem;
+   font-weight: 400;
+   border-radius: 10px;
+   width: 50px;
+   text-align: center;
 }
 
 .price {
-    display: block;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
+   display: block;
+   font-size: 2rem;
+   font-weight: 600;
+   margin-bottom: 20px;
 }
 .action-btn {
-    display: flex;
-    gap: 10px;
-    position: relative;
-    padding: 16px 0;
+   display: flex;
+   gap: 10px;
+   position: relative;
+   padding: 16px 0;
 
-    button {
-        padding: 8px 12px;
-        border-radius: 10px;
-        border: 1px solid transparent;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        color: var(--white);
-    }
+   button {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--white);
+   }
 }
 .add-cart {
-    background-color: var(--primary-color);
+   background-color: var(--primary-color);
 }
 .buy {
-    background-color: #03a11df5;
+   background-color: #03a11df5;
 }
 .category {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+   margin-top: 40px;
+   display: flex;
+   align-items: center;
+   gap: 12px;
 }
 // ///////////////////////
 .desc {
-    margin-top: 100px;
-    position: relative;
-    margin-bottom: 40px;
+   margin-top: 100px;
+   position: relative;
+   margin-bottom: 40px;
 }
 .action {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding-bottom: 20px;
-    button {
-        padding: 8px 12px;
-        border-radius: 10px;
-        border: 1px solid transparent;
-        color: var(--white);
-        cursor: pointer;
-        font-size: 1.6rem;
-    }
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   padding-bottom: 20px;
+   button {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      color: var(--white);
+      cursor: pointer;
+      font-size: 1.6rem;
+   }
 }
 .active {
-    background-color: var(--primary-color);
+   background-color: var(--primary-color);
 }
 .un-active {
-    background-color: #03a11df5;
+   background-color: #03a11df5;
 }
 .desc-text {
-    margin: 20px 10px;
-    padding: 20px 12px;
-    border-radius: 20px;
-    box-shadow: var(--boxShadow);
+   margin: 20px 10px;
+   padding: 20px 12px;
+   border-radius: 20px;
+   box-shadow: var(--boxShadow);
 }
 
 .shipper {
-    line-height: 1.6;
-    width: 100%;
+   line-height: 1.6;
+   width: 100%;
 }
 .load {
-    display: none;
-    position: absolute;
-    font-size: 2rem;
-    bottom: -32px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    padding: 6px 12px;
+   display: none;
+   position: absolute;
+   font-size: 2rem;
+   bottom: -32px;
+   left: 50%;
+   transform: translateX(-50%);
+   cursor: pointer;
+   padding: 6px 12px;
 }
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    margin: 20px 0;
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   margin: 20px 0;
 }
 .wrapper .disable {
-    display: none;
+   display: none;
 }
 .un-disable {
-    display: block;
+   display: block;
 }
 .wrapper td,
 .wrapper th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
 }
 p + p {
-    margin-top: 20px;
+   margin-top: 20px;
+}
+.text {
+   padding: 0 20px;
 }
 .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0 30px 0;
-    position: relative;
-    p {
-        height: 3px;
-        flex: 1;
-        background-color: var(--primary-color);
-        font-weight: bolder;
-        display: block;
-        border: 1px solid rgb(204 204 204);
-    }
-    h2 {
-        position: absolute;
-        background-color: var(--primary-color);
-        padding: 2px 16px;
-        width: 30%;
-        text-align: center;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 2.6rem;
-    }
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 10px 0 30px 0;
+   position: relative;
+   p {
+      height: 3px;
+      flex: 1;
+      background-color: var(--primary-color);
+      font-weight: bolder;
+      display: block;
+      border: 1px solid rgb(204 204 204);
+   }
+   h2 {
+      position: absolute;
+      background-color: var(--primary-color);
+      padding: 2px 16px;
+      width: 30%;
+      text-align: center;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 2.6rem;
+   }
 }
 @media (min-width: 740px) and (max-width: 1023px) {
-    .infor {
-        width: 1020px;
-    }
+   .infor {
+      width: 1020px;
+   }
 }
 
 @media (min-width: 1024px) and (max-width: 1336px) {
-    .wrapper {
-        padding: 0 10px;
-        overflow: hidden;
-    }
+   .wrapper {
+      padding: 0 10px;
+      overflow: hidden;
+   }
 
-    .load {
-        display: block;
-    }
-    .lange {
-        min-height: 600;
-        transition: all ease-in 0.3s;
-    }
-    .small {
-        height: 300px;
-        overflow: hidden;
-        transition: all ease-in 0.3s;
-    }
-    .hide {
-        display: none;
-    }
-    .show {
-        display: block;
-    }
+   .load {
+      display: block;
+   }
+   .lange {
+      min-height: 600;
+      transition: all ease-in 0.3s;
+   }
+   .small {
+      height: 300px;
+      overflow: hidden;
+      transition: all ease-in 0.3s;
+   }
+   .hide {
+      display: none;
+   }
+   .show {
+      display: block;
+   }
 }
