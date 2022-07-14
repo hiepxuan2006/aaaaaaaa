@@ -78,6 +78,7 @@ function Store() {
          } catch (error) {}
       };
       fetchApi();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [category, valueSort, pagination.page]);
    return (
       <div className={cx('wrapper')}>
