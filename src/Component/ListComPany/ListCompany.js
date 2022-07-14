@@ -5,9 +5,9 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import companyService from '~/service/CompanyService';
 import ItemCompany from './ItemCompany';
 import style from './ListComPany.module.scss';
+import { CompanyService } from '~/service';
 
 const cx = classNames.bind(style);
 function ListCompany() {
@@ -16,7 +16,7 @@ function ListCompany() {
 
    useEffect(() => {
       const fethAPi = async () => {
-         const result = await companyService.getAll('');
+         const result = await CompanyService.getAll('');
          setData(result.data);
       };
       fethAPi();

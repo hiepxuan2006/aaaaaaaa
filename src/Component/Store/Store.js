@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import productService from '~/service/productService';
+import { ProductService } from '~/service';
 import ItemProduct from '../ListProduct/ItemProduct';
 import Pagination from '../Pagination';
 import style from './Store.module.scss';
@@ -46,7 +46,7 @@ function Store() {
                      type: valueSort === 'price' ? 'ASC' : 'DESC',
                      page: pagination.page,
                   };
-                  result = await productService.getListProductCategory(params);
+                  result = await ProductService.getListProductCategory(params);
                } else {
                   params = {
                      category: category,

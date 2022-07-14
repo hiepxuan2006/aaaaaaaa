@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import productService from '~/service/productService';
+import { ProductService } from '~/service';
 import { baseURL } from '~/utils/Contant';
 import { setVND } from '~/utils/curentVND';
 import Shipper from '~/utils/Shipper';
@@ -36,8 +36,8 @@ function DetailsProduct() {
       const fethApi = async () => {
          //  const result = await sliderService.getAll('');
 
-         const result = await productService.getProduct(product);
-         const resultLike = await productService.getRandom('');
+         const result = await ProductService.getProduct(product);
+         const resultLike = await ProductService.getRandom('');
          setData(result.data);
          //  console.log(resultLike);
          setListProduct(resultLike.data);

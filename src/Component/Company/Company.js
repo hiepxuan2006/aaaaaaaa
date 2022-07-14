@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
-import companyService from '~/service/CompanyService';
+import { CompanyService } from '~/service';
 import ItemCompany from '../ListComPany/ItemCompany';
 import style from './Company.module.scss';
 const cx = classNames.bind(style);
@@ -9,7 +9,7 @@ function Company() {
    const [data, setData] = useState([]);
    useEffect(() => {
       const fethAPi = async () => {
-         const result = await companyService.getAll('');
+         const result = await CompanyService.getAll('');
          setData(result.data);
       };
       fethAPi();

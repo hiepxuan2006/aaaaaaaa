@@ -4,19 +4,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import ItemProduct from './ItemProduct';
-import * as httpRequest from '~/utils/httpRequest';
 import { useEffect, useState } from 'react';
+import { ProductService } from '~/service';
 const cx = classNames.bind(style);
 function ListProduct() {
    let [data, setData] = useState([]);
    useEffect(() => {
       const fetchApi = async () => {
          try {
-            const result = await httpRequest.get('product', {
-               params: {
-                  limit: 8,
-               },
-            });
+            const params = { limit: 8 };
+            const result = await ProductService.getAll(params);
             setData(result.data);
          } catch (error) {}
       };
