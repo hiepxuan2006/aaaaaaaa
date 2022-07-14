@@ -52,7 +52,7 @@ function Store() {
                      category: category,
                      page: pagination.page,
                   };
-                  result = await productService.getListProductCategory(params);
+                  result = await ProductService.getListProductCategory(params);
                }
             } else {
                params = {
@@ -65,7 +65,7 @@ function Store() {
                         ? 'DESC'
                         : '',
                };
-               result = await productService.getAll(params);
+               result = await ProductService.getAll(params);
             }
 
             setData(result.data);
