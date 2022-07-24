@@ -1,3 +1,5 @@
+import Order from '~/Component/Order';
+import OrderDeatails from '~/Component/Order/OrderDetail/OrderDeatails';
 import { Home, StoreLayout } from '~/Layout';
 import CartLayout from '~/Layout/CartLayout';
 import Details from '~/Layout/Details';
@@ -11,54 +13,64 @@ import ProductDeatil from '~/Pages/ProductDeatil';
 import StorePage from '~/Pages/StorePage';
 
 const publicRoute = [
-    {
-        path: '/',
-        component: HomePage,
-        layout: Home,
-    },
-    {
-        path: '/cua-hang',
-        component: StorePage,
-        layout: StoreLayout,
-        props: 'product',
-    },
-    {
-        path: '/cua-hang/:category',
-        component: StorePage,
-        layout: StoreLayout,
-    },
-    {
-        path: '/san-pham/:product',
-        component: ProductDeatil,
-        layout: Details,
-    },
-    {
-        path: '/danh-ba-nha-nong',
-        component: CompanyPage,
-        layout: StoreLayout,
-        props: 'post',
-    },
-    {
-        path: '/danh-ba-nha-nong/:company',
-        component: CompanyDetail,
-        layout: Details,
-        props: 'slug',
-    },
-    {
-        path: '/blog',
-        component: BlogPage,
-        layout: StoreLayout,
-        props: 'blog',
-    },
-    {
-        path: '/cart',
-        component: Cart,
-        layout: CartLayout,
-    },
-    {
-        path: '/checkout',
-        component: Checkout,
-        layout: CartLayout,
-    },
+   {
+      path: '/',
+      component: HomePage,
+      layout: Home,
+   },
+   {
+      path: '/cua-hang',
+      component: StorePage,
+      layout: StoreLayout,
+      props: 'product',
+   },
+   {
+      path: '/cua-hang/:category',
+      component: StorePage,
+      layout: StoreLayout,
+   },
+   {
+      path: '/san-pham/:product',
+      component: ProductDeatil,
+      layout: Details,
+   },
+   {
+      path: '/danh-ba-nha-nong',
+      component: CompanyPage,
+      layout: StoreLayout,
+      props: 'post',
+   },
+   {
+      path: '/danh-ba-nha-nong/:company',
+      component: CompanyDetail,
+      layout: Details,
+      props: 'slug',
+   },
+   {
+      path: '/blog',
+      component: BlogPage,
+      layout: StoreLayout,
+      props: 'blog',
+   },
+   {
+      path: '/cart',
+      component: Cart,
+      layout: CartLayout,
+   },
+   {
+      path: '/checkout',
+      component: Checkout,
+      layout: CartLayout,
+   },
+   {
+      path: '/don-hang',
+      component: Order,
+      layout: CartLayout,
+   },
+   {
+      path: '/don-hang/chi-tiet',
+      component: OrderDeatails,
+      layout: CartLayout,
+   },
 ];
 export { publicRoute };

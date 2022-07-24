@@ -31,7 +31,6 @@ function Store() {
    const handleSort = (e) => {
       setValueSort(e.target.value);
    };
-   console.log(category);
    useEffect(() => {
       let result = [];
       const fetchApi = async () => {
@@ -75,7 +74,9 @@ function Store() {
                totalRows: result.totalRows,
             });
             setLoading(false);
-         } catch (error) {}
+         } catch (error) {
+            setLoading(false);
+         }
       };
       fetchApi();
       // eslint-disable-next-line react-hooks/exhaustive-deps

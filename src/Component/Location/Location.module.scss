@@ -1,0 +1,17 @@
+.address {
+   margin: 24px 0;
+}
+.select {
+   flex: 1;
+   border-radius: 4px;
+}
+.select-err {
+   border: 1px solid red;
+}
+.error {
+   color: red;
+   margin-top: 6px;
+   margin-bottom: 20px;
+   font-size: 1.4rem;
+   padding-left: 12px;
+}

@@ -38,8 +38,8 @@ function DetailsProduct() {
 
          const result = await ProductService.getProduct(product);
          const resultLike = await ProductService.getRandom('');
+         console.log(result);
          setData(result.data);
-         //  console.log(resultLike);
          setListProduct(resultLike.data);
       };
       fethApi();
@@ -98,7 +98,7 @@ function DetailsProduct() {
                      </div>
                      <div className={cx('category')}>
                         <h3>Danh mục</h3>
-                        <p>{data.Category.name}</p>
+                        <p>{data.Category && data.Category.name}</p>
                      </div>
                   </div>
                </div>

@@ -5,9 +5,9 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { CompanyService } from '~/service';
 import ItemCompany from './ItemCompany';
 import style from './ListComPany.module.scss';
-import { CompanyService } from '~/service';
 
 const cx = classNames.bind(style);
 function ListCompany() {

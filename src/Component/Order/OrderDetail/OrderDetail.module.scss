@@ -1,0 +1,27 @@
+.wrapper {
+   width: 1200px;
+   table {
+      width: 100%;
+      font-size: 1.6rem;
+   }
+
+   td,
+   th {
+      border: 1px solid transparent;
+      text-align: left;
+      padding: 8px;
+   }
+}
+
+.body {
+   margin-top: 40px;
+}
+@media (max-width: 740px) {
+   .wrapper {
+      font-size: 2rem;
+      width: 100%;
+      table {
+         font-size: 2rem;
+      }
+   }
+}

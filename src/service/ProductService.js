@@ -18,6 +18,22 @@ class ProductService {
       const url = 'product/random';
       return httpRequest.get(url, { params });
    };
+   getSearch = (params) => {
+      const url = 'product/search';
+      return httpRequest.get(url, { params });
+   };
+   order = (data) => {
+      const url = 'order';
+      return httpRequest.post(url, data);
+   };
+   getOrder = (data) => {
+      const url = 'order/get-order';
+      return httpRequest.post(url, data);
+   };
+   searchOrder = (data) => {
+      const url = 'order/search-order';
+      return httpRequest.post(url, data);
+   };
 }
 const productService = new ProductService();
 export default productService;
