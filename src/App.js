@@ -11,38 +11,38 @@ import { publicRoute } from './Route';
 export const ThemeContext = createContext();
 
 function App() {
-    return (
-        <DataProvider>
-            <Notify />
-            <Router>
-                <div className="app">
-                    <Routes>
-                        {publicRoute.map((route, index) => {
-                            const Page = route.component;
-                            let Layout = Home;
-                            if (route.layout) {
-                                Layout = route.layout;
-                            }
-                            return (
-                                <Route
-                                    key={index}
-                                    path={route.path}
-                                    element={
-                                        <Layout data={route.props}>
-                                            <Page />
-                                        </Layout>
-                                    }
-                                />
-                            );
-                        })}
-                    </Routes>
-                </div>
-                <SwitchMode />
-                <Acount />
-                <Cart />
-            </Router>
-        </DataProvider>
-    );
+   return (
+      // <DataProvider>
+      <Router>
+         <Notify />
+         <div className="app">
+            <Routes>
+               {publicRoute.map((route, index) => {
+                  const Page = route.component;
+                  let Layout = Home;
+                  if (route.layout) {
+                     Layout = route.layout;
+                  }
+                  return (
+                     <Route
+                        key={index}
+                        path={route.path}
+                        element={
+                           <Layout data={route.props}>
+                              <Page />
+                           </Layout>
+                        }
+                     />
+                  );
+               })}
+            </Routes>
+         </div>
+         <SwitchMode />
+         <Acount />
+         <Cart />
+      </Router>
+      // </DataProvider>
+   );
 }
 
 export default App;

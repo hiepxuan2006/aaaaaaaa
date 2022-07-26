@@ -7,6 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useContext, useState } from 'react';
+import { toast } from 'react-toastify';
 import { DataContext } from '~/Component/DataProvider';
 import { AcountService } from '~/service';
 import { TOKEN_NAME } from '~/utils/Contant';
@@ -73,6 +74,7 @@ function Login({ setShowRegister }) {
             setShowAcount(false);
          } catch (error) {
             setLoading(false);
+            toast.warning(error.response.data.message);
          }
       } else {
          setLoading(false);
@@ -132,9 +134,12 @@ function Login({ setShowRegister }) {
                </div>
                <div className={cx('action-btn')}>
                   {loading ? (
-                     <div className={cx('loading')}>
-                        <FontAwesomeIcon icon={faSpinner} />
-                     </div>
+                     <button disabled className="loading">
+                        <FontAwesomeIcon
+                           className="loading_icon"
+                           icon={faSpinner}
+                        />
+                     </button>
                   ) : (
                      <button type="submit">Đăng nhập</button>
                   )}

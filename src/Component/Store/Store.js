@@ -35,7 +35,6 @@ function Store() {
       let result = [];
       const fetchApi = async () => {
          try {
-            setLoading(true);
             let params;
             if (!!category) {
                if (valueSort !== '') {
@@ -45,13 +44,17 @@ function Store() {
                      type: valueSort === 'price' ? 'ASC' : 'DESC',
                      page: pagination.page,
                   };
+                  // setLoading(true);
                   result = await ProductService.getListProductCategory(params);
+                  // setLoading(false);
                } else {
                   params = {
                      category: category,
                      page: pagination.page,
                   };
+                  // setLoading(true);
                   result = await ProductService.getListProductCategory(params);
+                  // setLoading(false);
                }
             } else {
                params = {
@@ -64,7 +67,9 @@ function Store() {
                         ? 'DESC'
                         : '',
                };
+               setLoading(true);
                result = await ProductService.getAll(params);
+               setLoading(false);
             }
 
             setData(result.data);

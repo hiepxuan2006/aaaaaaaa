@@ -35,7 +35,6 @@ function Search(props) {
       };
       fethApi();
    }, [debounce]);
-
    return (
       <HeadlessTippy
          interactive
