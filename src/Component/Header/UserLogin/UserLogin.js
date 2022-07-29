@@ -28,7 +28,7 @@ function UserLogin(props) {
                            alt=""
                         />
                      </div>
-                     <h4 className={cx('search-title')}>{user.name}</h4>
+                     <h4 className={cx('search-title')}>{user && user.name}</h4>
                   </div>
                   <ul className={cx('list-action')}>
                      <li className={cx('list-item')}>
