@@ -9,13 +9,12 @@ function DetailCompany(props) {
     const { company } = useParams();
     const [data, setData] = useState([]);
     useEffect(() => {
-        const fethAPi = async () => {
-            const result = await htpRequest.get(`company/ct/${company}`);
-            setData(result.data);
-        };
-        fethAPi();
+      const fethAPi = async () => {
+        const result = await htpRequest.get(`company/ct/${company}`);
+        setData(result.data);
+      };
+      fethAPi();
     }, [company]);
-    console.log(data);
     return (
         <Fragment>
             {data && (

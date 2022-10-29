@@ -37,8 +37,7 @@ function DetailsProduct() {
          //  const result = await sliderService.getAll('');
 
          const result = await ProductService.getProduct(product);
-         const resultLike = await ProductService.getRandom('');
-         console.log(result);
+         const resultLike = await ProductService.getRandom("");
          setData(result.data);
          setListProduct(resultLike.data);
       };

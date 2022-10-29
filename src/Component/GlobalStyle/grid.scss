@@ -23,6 +23,9 @@
     margin-left: 0;
     margin-right: 0;
 }
+.wrap {
+    flex-wrap: wrap;
+}
 
 .col {
     padding-left: 4px;
@@ -64,7 +67,7 @@
 }
 
 .c-6 {
-    flex: 0 0 50%;
+    flex: 1;
     max-width: 50%;
 }
 

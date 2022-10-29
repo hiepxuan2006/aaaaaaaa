@@ -1,0 +1,263 @@
+.container {
+    margin: 40px auto;
+    max-width: 1280px;
+}
+
+.title {
+    text-align: center;
+
+    h2 {
+        font-size: 50px;
+        font-weight: 400;
+        padding-bottom: 30px;
+        color: #A4D050;
+
+    }
+
+    p {
+        font-weight: 300;
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+.icon {
+    position: relative;
+    max-width: 30%;
+    margin: 20px auto;
+    animation: jumpUp 4s infinite linear;
+
+}
+
+.icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    left: 0;
+    height: 10px;
+    background: transparent url(https://file.hstatic.net/200000301988/file/line_021181de8b954d719b529b24a99edea0.png) no-repeat scroll left center;
+}
+
+.icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    right: 0;
+    height: 10px;
+    background: transparent url(https://file.hstatic.net/200000301988/file/line_021181de8b954d719b529b24a99edea0.png) no-repeat scroll left center;
+}
+
+
+.wrap {
+    display: flex;
+    margin: 40px 0;
+
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    width: 35%;
+
+    .item {
+        h3 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 16px;
+            animation: jumpUp 4s infinite linear;
+
+
+        }
+
+        span {
+            font-size: 14px;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        img {
+            animation: jumpUpLeft 4s infinite linear;
+
+        }
+
+    }
+}
+
+.center {
+    animation: jumpUp 2s infinite linear;
+
+    .image {}
+}
+
+
+
+.right {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    width: 35%;
+
+    .item {
+        h3 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 16px;
+            animation: jumpUp 4s infinite linear;
+
+        }
+
+        span {
+            font-size: 14px;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        img {
+            animation: jumpUpLeft 4s infinite linear;
+
+        }
+    }
+}
+
+// bottom
+.bottom {
+    display: flex;
+    justify-content: space-between;
+
+    .item {
+        padding: 10px;
+        width: 30%;
+        display: flex;
+        border: 1px solid #A4D050;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+
+        .wrap-item {
+            animation: jumpUp 4s infinite linear;
+
+        }
+
+        img {
+            height: 60px;
+            width: 60px;
+        }
+    }
+
+}
+
+@keyframes jumpUp {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes jumpUpLeft {
+    0% {
+        transform: translatex(-5px);
+    }
+
+    50% {
+        transform: translatex(0px);
+    }
+
+    100% {
+        transform: translatex(-5px);
+    }
+}
+
+// response
+@media (max-width: 395px) {
+    .title {
+        text-align: center;
+
+        h2 {
+            font-size: 30px;
+            font-weight: 300;
+            padding-bottom: 20px;
+
+        }
+
+        p {
+            font-weight: 300;
+            text-align: justify;
+            width: 90%;
+        }
+    }
+
+    .wrap {
+        display: block;
+        margin: 0;
+
+    }
+
+    .left {
+        display: none;
+        width: 100%;
+    }
+
+    .center {
+        animation: jumpUp 2s infinite linear;
+        height: 300px;
+        width: 100%;
+        margin: 20px 0;
+        overflow: hidden;
+
+        .image {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .bottom {
+        margin-top: 10px;
+
+        .item {
+            width: 30%;
+            display: block;
+            border: 1px solid #A4D050;
+            text-align: center;
+
+            .wrap-item {
+                animation: jumpUp 4s infinite linear;
+
+            }
+
+            img {
+                height: 60px;
+                width: 60px;
+            }
+        }
+
+        .desc-item {
+            h3 {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+}

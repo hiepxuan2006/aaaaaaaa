@@ -1,0 +1,44 @@
+@keyframes Gradient {
+    0% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+}
+
+
+@keyframes table-loading-placeholder {
+    0% {
+        background-color: rgba(165, 165, 165, 0.1);
+    }
+
+    50% {
+        background-color: rgba(165, 165, 165, 0.3)
+    }
+
+    100% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+}
+
+.item {
+    height: 160px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-size: 400% 400%;
+    animation: table-loading-placeholder 4s ease-in-out infinite;
+}
+
+.table {
+    height: 30px;
+    margin-top: 10px;
+    width: 100%;
+    animation: table-loading-placeholder 4s ease-in-out infinite;
+}

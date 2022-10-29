@@ -22,18 +22,16 @@
     width: 100%;
     position: relative;
     p {
-        height: 3px;
+        height: 2px;
         flex: 1;
         background-color: var(--primary-color);
         font-weight: bolder;
         display: block;
-        border: 1px solid rgb(204 204 204);
+        border: 1px solid var(--primary-color);
     }
     h1 {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+            color: var(--primary-color);
         padding: 2px 16px;
         width: 30%;
         text-align: center;
@@ -57,10 +55,11 @@
         border-radius: 30px;
     }
 }
-@media (max-width: 739px) {
+@media (max-width:395px) {
     .heading {
         h1 {
-            width: 40%;
+            width: 70%;
         }
+                
     }
 }

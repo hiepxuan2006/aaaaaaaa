@@ -22,18 +22,16 @@
    font-size: 1.6rem;
    position: relative;
    p {
-      height: 3px;
+      height: 2px;
       flex: 1;
       background-color: var(--primary-color);
       font-weight: bolder;
       display: block;
-      border: 1px solid rgb(204 204 204);
+      border: 1px solid var(--primary-color);
    }
    h1 {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+         color: var(--primary-color);
       padding: 2px 16px;
       width: 30%;
       text-align: center;
@@ -74,13 +72,28 @@
    align-items: center;
    justify-content: center;
    flex: 1;
+   animation: jumpUp 3s infinite linear;
+   }
+   
+   @keyframes jumpUp {
+      0% {
+         transform: translateY(-10px);
+      }
+   
+      50% {
+         transform: translateY(0px);
+      }
+   
+      100% {
+         transform: translateY(-10px);
+      }
 }
 @media (min-width: 1024px) and (max-width: 1239px) {
    .logo-tablet {
       display: block;
    }
 }
-@media (max-width: 740px) {
+@media (max-width: 395px) {
    .hidden-mobile {
       display: none;
    }
@@ -88,13 +101,12 @@
       display: block;
    }
    .heading {
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
+
       p {
+         // display: none;
       }
       h1 {
-         width: 40%;
+width: 70%;
       }
    }
    .logo-cate {

@@ -1,4 +1,7 @@
 .wrapper {
+    margin-top: 60px;
+        width: 100%;
+        height: 100%;
 }
 .header {
     // padding: 0 24px;
@@ -25,6 +28,10 @@
     animation: spiner 1s linear infinite;
     color: #000;
 }
+.pagination {
+    width: 100%;
+    margin: 0 auto;
+}
 @keyframes spiner {
     from {
         transform: rotate(0);
@@ -33,5 +40,5 @@
         transform: rotate(380deg);
     }
 }
-.content {
+@media (max-width: 395px) {
 }

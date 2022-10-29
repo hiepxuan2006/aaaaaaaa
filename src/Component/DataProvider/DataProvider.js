@@ -63,11 +63,9 @@ export const DataProvider = (props) => {
       try {
          setLoading(true);
          const results = await AcountService.checkLogin();
-         // console.log('kq', results.success);
          if (results.success) {
-            setUser(results.user);
-            setIsLogin(true);
-            console.log(results);
+           setUser(results.user);
+           setIsLogin(true);
          }
          setLoading(false);
       } catch (error) {

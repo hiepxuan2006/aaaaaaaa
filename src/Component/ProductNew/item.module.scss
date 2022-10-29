@@ -1,0 +1,86 @@
+.item {
+    display: flex;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    gap: 10px;
+    user-select: none;
+}
+
+.image {
+    height: 160px;
+    width: 240px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+
+}
+
+.image::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    right: 0;
+    background-color: var(--primary-color);
+}
+
+.content {
+    padding-top: 10px;
+
+    h3 {
+        font-size: 30px;
+        font-weight: 300;
+    }
+}
+
+.itemQuantity {
+    display: flex;
+    height: 30px;
+    width: 100px;
+
+    .quantitySelector {
+        width: 30px;
+        text-align: center;
+    }
+
+    .qtyBtn {
+        width: 20px;
+    }
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+.add {
+    border-radius: 5px;
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+
+    button {
+        border: none;
+    }
+
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 395px) {
+    .item {
+        width: 100%;
+    }
+
+    .image {
+        width: 120px;
+    }
+}

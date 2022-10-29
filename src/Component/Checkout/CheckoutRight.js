@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import style from './Checkout.module.scss';
 import classNames from 'classnames/bind';
 import { DataContext } from '../DataProvider';
-import { setVND } from '~/utils/curentVND';
-import { Link } from 'react-router-dom';
+import { setVND } from "~/utils/curentVND";
 
 const cx = classNames.bind(style);
 function CheckoutRight(props) {

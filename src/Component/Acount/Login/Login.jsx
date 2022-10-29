@@ -66,7 +66,6 @@ function Login({ setShowRegister }) {
       ) {
          try {
             const result = await AcountService.login(valueForm);
-            console.log(result);
             localStorage.setItem(TOKEN_NAME, result.token);
             // setCookie('token', result.token, 3);
             setValueForm({ email: '', password: '' });

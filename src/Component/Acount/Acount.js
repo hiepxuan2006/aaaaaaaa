@@ -14,7 +14,6 @@ function Acount() {
    const [showConfirm, setShowConfirm] = useState(false);
    const [emailVerify, setEmailVerify] = useState('');
    const { showAcount, setShowAcount } = useContext(DataContext);
-   const resetForm = () => {};
    const phone = require('~/assets/img/login.png');
 
    return (

@@ -6,8 +6,7 @@ import { Wrapper } from '~/Component/Popper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { DataContext } from '~/Component/DataProvider';
-import { Link } from 'react-router-dom';
-import { TOKEN_NAME } from '~/utils/Contant';
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(style);
 function UserLogin(props) {

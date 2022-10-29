@@ -31,27 +31,26 @@ function ConfirmOtp({
       setValue({ ...value, [e.target.name]: e.target.value });
    };
    const valudatorAll = () => {
-      const msg = {};
-      if (emailVerify) {
-         if (!validator.isLength(otp, { min: 6, max: 7 })) {
-            msg.otp = 'nhập mã OTP gồm 6 chử số';
-         }
-         if (validator.isEmpty(otp)) {
-            msg.otp = 'Vui lòng nhập mã !';
-         }
-      } else {
-         if (!validator.isEmail(email)) {
-            msg.email = 'Email không hợp lệ !';
-         }
-         if (validator.isEmpty(email)) {
-            msg.email = 'Vui lòng nhập email !';
-         }
-      }
+     const msg = {};
+     if (emailVerify) {
+       if (!validator.isLength(otp, { min: 6, max: 7 })) {
+         msg.otp = "nhập mã OTP gồm 6 chử số";
+       }
+       if (validator.isEmpty(otp)) {
+         msg.otp = "Vui lòng nhập mã !";
+       }
+     } else {
+       if (!validator.isEmail(email)) {
+         msg.email = "Email không hợp lệ !";
+       }
+       if (validator.isEmpty(email)) {
+         msg.email = "Vui lòng nhập email !";
+       }
+     }
 
-      setErr(msg);
-      return Object.keys(msg).length > 0 ? false : true;
+     setErr(msg);
+     return Object.keys(msg).length > 0 ? false : true;
    };
-   console.log(err);
    const handleSubmit = async (e) => {
       e.preventDefault();
       const isValid = valudatorAll();

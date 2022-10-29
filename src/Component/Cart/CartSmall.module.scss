@@ -146,10 +146,14 @@
     }
 }
 
-@media (max-width: 739px) {
+@media (max-width: 395px) {
+    .wrapper {
+        width: 300px;
+    }
     .cart-image {
         height: 90px;
         width: 90px;
+        display: none;
         img {
         }
     }
@@ -174,6 +178,8 @@
         }
     }
     .cart-btn {
+        display: block;
+            margin: 0 auto;
         button {
             font-size: 2rem;
         }

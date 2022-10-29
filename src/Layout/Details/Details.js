@@ -13,20 +13,20 @@ function Details({ children }) {
     }, []);
     const { theme } = useContext(DataContext);
     return (
-        <div className={theme}>
-            <div className={cx('wrapper')}>
-                <Header />
-                <div className={cx('container')}>
-                    <div class="row">
-                        <div className="col l-9 m-12 c-12">{children}</div>
-                        <div className="col l-3 m-0 c-0">
-                            <SideBar />
-                        </div>
-                    </div>
-                </div>
-                <Footer />
+      <div className={theme}>
+        <div className={cx("wrapper")}>
+          <Header />
+          <div className={cx("container")}>
+            <div className="row">
+              <div className="col l-9 m-12 c-12">{children}</div>
+              <div className="col l-3 m-0 c-0">
+                <SideBar />
+              </div>
             </div>
+          </div>
+          <Footer />
         </div>
+      </div>
     );
 }
 

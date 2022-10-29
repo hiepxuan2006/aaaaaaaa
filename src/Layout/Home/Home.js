@@ -5,11 +5,7 @@ import Header from '~/Component/Header';
 import style from './Home.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faRotate,
-    faSpider,
-    faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(style);
 function Home({ children }) {

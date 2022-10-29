@@ -1,14 +1,51 @@
 .commit {
    width: 100%;
-   background-image: url(https://mighty-dusk-66790.herokuapp.com/upload/banner-san-pham.jpg);
+   background-image: url(https://file.hstatic.net/200000301988/file/slide3_d0a1ff81c1134f4b8b732d0ab996e574.jpg);
    background-repeat: 'no-repeat';
+   position: relative;
    background-size: 'cover';
    height: '400px';
    margin-top: 40px;
+   ::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         background-image: url(https://file.hstatic.net/200000301988/file/ripped-paper-header-1_a785c46809_af662e39ca524cd3ae03cb6057a5c870.png);
+         background-size: cover;
+         height: 15px;
+      }
 }
 .commit {
    img {
       height: '200px ';
       width: '200px';
    }
+}
+.footer-bottom-item-payment {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   padding-bottom: 20px;
+}
+
+.payment-icon {
+   height: 40px;
+   width: 60px;
+   background-color: #fff;
+   border-radius: 10px;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.svg {
+   object-fit: cover;
+   padding: 5px 0;
+   height: 90%;
+   opacity: 0.5;
+   width: 100%;
 }

@@ -65,18 +65,17 @@ function Register({ setShowRegister, setShowConfirm, setEmailVerify }) {
          return;
       } else {
          try {
-            setLoading(true);
-            const results = await AcountService.register(ValueForm);
-            setLoading(false);
-            if (results.success) {
-               setEmailVerify(results.data.email);
-               setShowConfirm(true);
-               setShowRegister(false);
-            }
+           setLoading(true);
+           const results = await AcountService.register(ValueForm);
+           setLoading(false);
+           if (results.success) {
+             setEmailVerify(results.data.email);
+             setShowConfirm(true);
+             setShowRegister(false);
+           }
          } catch (error) {
-            console.log(error);
-            setLoading(false);
-            toast.warning(error.response.data.message);
+           setLoading(false);
+           toast.warning(error.response.data.message);
          }
       }
    };

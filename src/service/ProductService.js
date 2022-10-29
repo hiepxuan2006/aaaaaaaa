@@ -11,7 +11,6 @@ class ProductService {
    };
    getProduct = (product, params) => {
       const url = `product/san-pham/${product}`;
-      console.log(product);
       return httpRequest.get(url, { params });
    };
    getRandom = (params) => {

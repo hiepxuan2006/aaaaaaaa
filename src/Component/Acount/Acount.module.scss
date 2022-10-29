@@ -3,7 +3,6 @@
    top: 0;
    left: 0;
    height: 100%;
-   width: 100%;
    z-index: 10001;
    animation: fadeIn linear 0.5s;
    opacity: 1;
@@ -79,7 +78,15 @@
       font-size: 5rem;
    }
 }
-@media (max-width: 768px) {
+@media (max-width: 395px) {
+   .content {
+      width: 370px;
+      padding: 0 12px;
+   }
+
+   .wrapper {
+      width: 90%;
+   }
    .body-right {
       display: none;
    }

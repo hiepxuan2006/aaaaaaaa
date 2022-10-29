@@ -41,16 +41,16 @@ function Pagination(props) {
             {paginationBt &&
                 paginationBt.map((itemBtn, index) => {
                     return (
-                        <div className={cx('btn')} key={index}>
-                            <button
-                                disabled={itemBtn == '...' || itemBtn == page}
-                                onClick={() => {
-                                    handlePageChange(itemBtn);
-                                }}
-                            >
-                                {itemBtn}
-                            </button>
-                        </div>
+                      <div className={cx("btn")} key={index}>
+                        <button
+                          disabled={itemBtn === "..." || itemBtn === page}
+                          onClick={() => {
+                            handlePageChange(itemBtn);
+                          }}
+                        >
+                          {itemBtn}
+                        </button>
+                      </div>
                     );
                 })}
 

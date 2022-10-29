@@ -20,48 +20,44 @@ function Slider() {
       fethApi();
    }, []);
    return (
-      <div className={`${cx('slider')} haha`}>
-         <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-               delay: 3000,
-               disableOnInteraction: false,
-            }}
-            pagination={{
-               clickable: true,
-            }}
-            loop={true}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            className={cx('mySwiper')}
+    <div className={`${cx('slider')}`}>
+     <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      autoplay={{
+       delay: 10000,
+       disableOnInteraction: false,
+      }}
+      // pagination={{
+      //  clickable: true,
+      // }}
+      loop={true}
+      navigation={true}
+      modules={[Autoplay, Pagination, Navigation]}
+      className={cx('mySwiper')}
+     >
+      {data &&
+       data.map((item, index) => {
+        return (
+         <SwiperSlide
+          key={index}
+          //   style={item.data.props.style}
+          className={cx('swiper-slide-show')}
          >
-            {data &&
-               data.map((item, index) => {
-                  return (
-                     <SwiperSlide
-                        key={index}
-                        //   style={item.data.props.style}
-                        className={cx('swiper-slide-show')}
-                     >
-                        <div className={cx('slide-content')}>
-                           {/* <div className={cx("slide-left")}>
-                  <h2 className={cx("slide-heading")}>{item.title}</h2>
-                  <p className={cx("slide-desc")}>{item.description}</p>
-                  <div className={cx("slide-link")}></div>
-                </div> */}
-                           <div className={cx('slide-right')}>
-                              <img
-                                 src={`${baseURL}/${item.image_path}`}
-                                 alt=""
-                              />
-                           </div>
-                        </div>
-                     </SwiperSlide>
-                  );
-               })}
-         </Swiper>
-      </div>
+          <div className={cx('slide-content')}>
+           <div className={cx('slide-right')}>
+            <img
+             className={cx('image')}
+             src={`${baseURL}/${item.image_path}`}
+             alt=""
+            />
+           </div>
+          </div>
+         </SwiperSlide>
+        );
+       })}
+     </Swiper>
+    </div>
    );
 }
 

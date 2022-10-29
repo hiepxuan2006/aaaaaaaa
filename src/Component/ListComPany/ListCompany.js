@@ -44,43 +44,41 @@ function ListCompany() {
       return () => window.removeEventListener('resize', handleResize);
    }, []);
    return (
-      <div className={cx('wrapper')}>
-         <div className={cx('heading')}>
-            <p></p>
-            <h1>Kết nối nhà vườn</h1>
-         </div>
-         <div className={`${cx('slider')} haha`}>
-            <Swiper
-               spaceBetween={30}
-               slidesPerView={screen.width < 740 ? 2 : 3}
-               loop={true}
-               modules={[Autoplay, Pagination]}
-               autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-               }}
-               className={cx('mySwiper')}
-            >
-               {data &&
-                  data.map((item, index) => {
-                     return (
-                        <div key={index}>
-                           <SwiperSlide
-                              key={index}
-                              className={cx('swiper-slide-show')}
-                           >
-                              <div className={cx('slide-content')}>
-                                 <div className={cx('slide-right')}>
-                                    <ItemCompany item={item} />
-                                 </div>
-                              </div>
-                           </SwiperSlide>
-                        </div>
-                     );
-                  })}
-            </Swiper>
-         </div>
-      </div>
+     <div className={cx("wrapper")}>
+       <div className={cx("heading")}>
+         <p></p>
+         <h1>Các đơn vị đồng hành</h1>
+         <p></p>
+       </div>
+       <div className={`${cx("slider")} haha`}>
+         <Swiper
+           spaceBetween={30}
+           slidesPerView={screen.width < 740 ? 2 : 3}
+           loop={true}
+           modules={[Autoplay, Pagination]}
+           autoplay={{
+             delay: 3000,
+             disableOnInteraction: false,
+           }}
+           className={cx("mySwiper")}
+         >
+           {data &&
+             data.map((item, index) => {
+               return (
+                 <div key={index}>
+                   <SwiperSlide key={index} className={cx("swiper-slide-show")}>
+                     <div className={cx("slide-content")}>
+                       <div className={cx("slide-right")}>
+                         <ItemCompany item={item} />
+                       </div>
+                     </div>
+                   </SwiperSlide>
+                 </div>
+               );
+             })}
+         </Swiper>
+       </div>
+     </div>
    );
 }
 
