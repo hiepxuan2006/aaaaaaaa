@@ -101,7 +101,6 @@ function Header() {
              <FontAwesomeIcon icon={faCartFlatbed}></FontAwesomeIcon>
              <span>{cart !== null ? cart.length : 0}</span>
            </div>
-           {/* </HeadlessTippy> */}
 
            {isLogin ? (
              <UserLogin />
@@ -135,12 +134,6 @@ function Header() {
                  <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
                </div>
              </HeadlessTippy>
-             // <div
-             //    onClick={() => setShowAcount(true)}
-             //    className={cx('user')}
-             // >
-             //    <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
-             // </div>
            )}
          </div>
        </div>

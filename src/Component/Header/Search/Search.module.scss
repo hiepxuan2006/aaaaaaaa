@@ -21,7 +21,7 @@
 }
 .search-result {
     left: 0;
-    width: 300px;
+    width: 100%;
     background-color: rgba(9, 9, 9, 0.538);
     border-radius: 10px;
     overflow-y: scroll;
@@ -88,8 +88,36 @@
 
 // /////////////
 
-@media (max-width: 739px) {
+@media (max-width: 395px) {
     .hidden-mobile {
-        display: none;
-    }
+        // display: none;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border-radius: 0;
+            border: none;
+            box-shadow: var(--boxShadow);
+        
+            input {
+                flex: 1;
+            }
+        }
+        
+        .loading,
+        .clear {
+            margin-right: 10px;
+        }
+        
+        .search-result {
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+        
+        #tippy-3 {
+            width: 100%;
+        }
 }

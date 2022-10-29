@@ -36,56 +36,57 @@ function Search(props) {
       fethApi();
    }, [debounce]);
    return (
-      <HeadlessTippy
-         interactive
-         visible={visible && searchResult && searchResult.length > 0}
-         render={(attrs) => (
-            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-               <Wrapper>
-                  <h4 className={cx('search-title')}>Sản phẩm </h4>
-                  {searchResult &&
-                     searchResult.map((item, index) => {
-                        return <ResultItem key={index} data={item} />;
-                     })}
-               </Wrapper>
-            </div>
-         )}
-         onClickOutside={handleHideResult}
-      >
-         <div className={cx('search', 'hidden-mobile')}>
-            <input
-               ref={inputRef}
-               type="text"
-               name="search"
-               value={searchValue}
-               onChange={(e) => setSearchValue(e.target.value)}
-               onFocus={() => setVisible(true)}
-               placeholder="Tìm kiếm sản phẩm"
-            />
-            {!!searchValue && !loading && (
-               <div
-                  className={cx('clear')}
-                  onClick={() => {
-                     inputRef.current.focus();
-                     setSearchResult([]);
-                     setSearchValue('');
-                  }}
-               >
-                  <FontAwesomeIcon icon={faClose} />
-               </div>
-            )}
-            {loading ? (
-               <div className={cx('loading')}>
-                  <FontAwesomeIcon icon={faRotate} />
-               </div>
-            ) : (
-               ''
-            )}
-            <button className={cx('btn-search')}>
-               <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
-            </button>
+     <HeadlessTippy
+       className={cx("result-search")}
+       interactive
+       visible={visible && searchResult && searchResult.length > 0}
+       render={(attrs) => (
+         <div className={cx("search-result")} tabIndex="-1" {...attrs}>
+           <Wrapper>
+             <h4 className={cx("search-title")}>Sản phẩm </h4>
+             {searchResult &&
+               searchResult.map((item, index) => {
+                 return <ResultItem key={index} data={item} />;
+               })}
+           </Wrapper>
          </div>
-      </HeadlessTippy>
+       )}
+       onClickOutside={handleHideResult}
+     >
+       <div className={cx("search", "hidden-mobile")}>
+         <input
+           ref={inputRef}
+           type="text"
+           name="search"
+           value={searchValue}
+           onChange={(e) => setSearchValue(e.target.value)}
+           onFocus={() => setVisible(true)}
+           placeholder="Tìm kiếm sản phẩm"
+         />
+         {!!searchValue && !loading && (
+           <div
+             className={cx("clear")}
+             onClick={() => {
+               inputRef.current.focus();
+               setSearchResult([]);
+               setSearchValue("");
+             }}
+           >
+             <FontAwesomeIcon icon={faClose} />
+           </div>
+         )}
+         {loading ? (
+           <div className={cx("loading")}>
+             <FontAwesomeIcon icon={faRotate} />
+           </div>
+         ) : (
+           ""
+         )}
+         <button className={cx("btn-search")}>
+           <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+         </button>
+       </div>
+     </HeadlessTippy>
    );
 }
 
