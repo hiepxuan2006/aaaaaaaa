@@ -222,8 +222,9 @@
 // 
 @media (max-width: 395px) {
     .wrapper {
-        width: 390px;
+        width: 100vw;
         margin: 20px auto;
+        position: relative;
 
     }
 
@@ -247,8 +248,20 @@
 
     .content {
         display: flex;
+            height: 100%;
         flex-direction: column;
     }
+        .page-left {
+            position: relative;
+        }
+    
+        .btnPage {
+            z-index: 1000;
+            position: absolute;
+            left: 0;
+            top: 55%;
+            right: 0;
+        }
 
     .page-item {
         display: flex;

@@ -115,7 +115,7 @@ function CheckoutLeft(props) {
     }
   };
   return (
-    <div className={cx("wrapper")}>
+    <div className={cx("wrapper-left")}>
       <form className={cx("shipper")} onSubmit={handleSubmit}>
         <div className={cx("header")}>
           <h3>Thông tin thanh toán</h3>

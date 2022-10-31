@@ -121,6 +121,10 @@
 .node-checkout {
    margin-top: 24px;
 }
+.heading {
+   padding: 0 44px;
+   margin-top: 20px;
+}
 .btn {
    margin-top: 24px;
    button {
@@ -135,3 +139,12 @@
 .disable {
    display: none;
 }
+@media (max-width: 395px) {
+   .dis-column {
+      flex-direction: column-reverse;
+   }
+
+      .heading {
+         padding: 0;
+      }
+      }
