@@ -48,6 +48,7 @@ function Header() {
    const handleShowBarMobile = () => {
       setShowNavbar(!showNavbar);
    };
+  console.log(scrollY);
    return (
      <header
        className={`${theme} ${cx("wrapper")} ${

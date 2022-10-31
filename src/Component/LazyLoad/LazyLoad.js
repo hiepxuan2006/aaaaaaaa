@@ -13,7 +13,7 @@ const LazyLoad = (props) => {
         <div className="row">
           {data.map((item) => {
             return (
-              <div className="col l-12 m-12 c-12">
+              <div className="col l-12 m-6 c-6">
                 <div className={cx("table")}></div>
               </div>
             );
@@ -25,11 +25,11 @@ const LazyLoad = (props) => {
     return (
       <div className={cx("LazyLoad")}>
         <div className="Wrapper">
-          <div className="row">
+          <div className="row wrap">
             {data &&
               data.map((item) => {
                 return (
-                  <div className="col l-4 m-4 c-12">
+                  <div className="col l-4 m-6 c-6">
                     <div className={cx("item")}></div>
                   </div>
                 );

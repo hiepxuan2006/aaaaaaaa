@@ -51,157 +51,148 @@ function DetailsProduct() {
 
    const value = useContext(DataContext);
    return (
-      <Fragment>
-         {data && (
-            <div className={cx('wrapper')}>
-               <div className={cx('infor')}>
-                  <div className={cx('image')}>
-                     <img
-                        src={`${baseURL}/${data.feature_image_path}`}
-                        alt=""
-                     />
-                  </div>
-                  <div className={cx('content')}>
-                     <div className={cx('heading')}>
-                        <h2>{data.name}</h2>
-                     </div>
-                     <span className={cx('price')}>{setVND(data.price)}</span>
-                     <div className={cx('action-buy')}>
-                        <div className={cx('btn-quantity')}>
-                           <div
-                              className={cx('minus')}
-                              onClick={() => updateQuantity('minus')}
-                           >
-                              <FontAwesomeIcon icon={faMinus} />
-                           </div>
-                           <div className={cx('quantity')}>{quantity}</div>
-                           <div
-                              className={cx('plus')}
-                              onClick={() => updateQuantity('plus')}
-                           >
-                              <FontAwesomeIcon icon={faPlus} />
-                           </div>
-                        </div>
-                        <div className={cx('action-btn')}>
-                           <button
-                              className={cx('add-cart')}
-                              onClick={() => {
-                                 value.addCart(data, quantity);
-                                 // toast.success("Thêm giỏ hàng thành công !");
-                              }}
-                           >
-                              Thêm vào giỏ hàng
-                           </button>
-                           <button className={cx('buy')}>Mua hàng</button>
-                        </div>
-                     </div>
-                     <div className={cx('category')}>
-                        <h3>Danh mục</h3>
-                        <p>{data.Category && data.Category.name}</p>
-                     </div>
-                  </div>
+     <Fragment>
+       {data && (
+         <div className={cx("wrapper")}>
+           <div className={cx("infor")}>
+             <div className={cx("image")}>
+               <img src={`${baseURL}/${data.feature_image_path}`} alt="" />
+             </div>
+             <div className={cx("content")}>
+               <div className={cx("heading")}>
+                 <h2>{data.name}</h2>
                </div>
-               <div className={cx('desc')}>
-                  <div className={cx('action')}>
-                     <button
-                        className={`${
-                           isDescProduct ? cx('active') : cx('un-active')
-                        }`}
-                        onClick={handleInfor}
-                     >
-                        Thông tin chi tiết sản phẩm
-                     </button>
-                     <button
-                        className={` ${
-                           isDescProduct ? cx('un-active') : cx('active')
-                        }`}
-                        onClick={handleShipper}
-                     >
-                        Chính sách giao hàng sách giao hàng
-                     </button>
-                     <button
-                        className={` ${
-                           isDescProduct ? cx('un-active') : cx('un-active')
-                        }`}
-                        onClick={handleShipper}
-                     >
-                        Đánh giá
-                     </button>
-                  </div>
-                  <div className={cx('desc-text')}>
-                     <div
-                        className={`${cx('shipper')} ${
-                           isDescProduct ? cx('disable') : cx('un-disable')
-                        } ${show ? cx('lange') : cx('small')}`}
-                     >
-                        <Shipper />
-                        <p
-                           onClick={handlePlus}
-                           className={`${cx('load')}  ${
-                              show ? cx('hide') : cx('show')
-                           }`}
-                        >
-                           {'<<< Xem thêm >>>'}
-                        </p>
-                        <p
-                           onClick={handlePlus}
-                           className={`${cx('load')} ${
-                              show ? cx('show') : cx('hide')
-                           }`}
-                        >
-                           {'<<< Thu gọn >>>'}
-                        </p>
-                     </div>
-                     {/* //// */}
-                     <div
-                        className={`${cx('desc-product')} ${
-                           isDescProduct ? cx('un-disable') : cx('disable')
-                        } ${show ? cx('lange') : cx('small')}`}
-                     >
-                        <p
-                           className={`${cx('text')}`}
-                           dangerouslySetInnerHTML={{
-                              __html: data.content,
-                           }}
-                        ></p>
-                        <p
-                           onClick={handlePlus}
-                           className={`${cx('load')}  ${
-                              show ? cx('hide') : cx('show')
-                           }`}
-                        >
-                           {'<<< Xem thêm >>>'}
-                        </p>
-                        <p
-                           onClick={handlePlus}
-                           className={`${cx('load')} ${
-                              show ? cx('show') : cx('hide')
-                           }`}
-                        >
-                           {'<<< Thu gọn >>>'}
-                        </p>
-                     </div>
-                  </div>
+               <span className={cx("price")}>{setVND(data.price)}</span>
+               <div className={cx("category")}>
+                 <h3>Danh mục</h3>
+                 <p>{data.Category && data.Category.name}</p>
                </div>
-            </div>
-         )}
-         <div className={cx('may-like')}>
-            <div className={cx('title')}>
-               <h2>Có thể bạn thích</h2>
-               <p></p>
-            </div>
-            <div className="row">
-               {listProduct &&
-                  listProduct.map((item, index) => {
-                     return (
-                        <div className="col l-4 m-4 c-12">
-                           <ItemProduct item={item} key={index} />
-                        </div>
-                     );
-                  })}
-            </div>
+               <div className={cx("action-buy")}>
+                 <div className={cx("btn-quantity")}>
+                   <div
+                     className={cx("minus")}
+                     onClick={() => updateQuantity("minus")}
+                   >
+                     <FontAwesomeIcon icon={faMinus} />
+                   </div>
+                   <div className={cx("quantity")}>{quantity}</div>
+                   <div
+                     className={cx("plus")}
+                     onClick={() => updateQuantity("plus")}
+                   >
+                     <FontAwesomeIcon icon={faPlus} />
+                   </div>
+                 </div>
+                 <div className={cx("action-btn")}>
+                   <button
+                     className={cx("add-cart")}
+                     onClick={() => {
+                       value.addCart(data, quantity);
+                       // toast.success("Thêm giỏ hàng thành công !");
+                     }}
+                   >
+                     Thêm vào giỏ hàng
+                   </button>
+                   <button className={cx("buy")}>Mua hàng</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div className={cx("desc")}>
+             <div className={cx("action")}>
+               <button
+                 className={`${isDescProduct ? cx("active") : cx("un-active")}`}
+                 onClick={handleInfor}
+               >
+                 Thông tin chi tiết sản phẩm
+               </button>
+               <button
+                 className={` ${
+                   isDescProduct ? cx("un-active") : cx("active")
+                 }`}
+                 onClick={handleShipper}
+               >
+                 Chính sách giao hàng sách giao hàng
+               </button>
+               <button
+                 className={` ${
+                   isDescProduct ? cx("un-active") : cx("un-active")
+                 }`}
+                 onClick={handleShipper}
+               >
+                 Đánh giá
+               </button>
+             </div>
+             <div className={cx("desc-text")}>
+               <div
+                 className={`${cx("shipper")} ${
+                   isDescProduct ? cx("disable") : cx("un-disable")
+                 } ${show ? cx("lange") : cx("small")}`}
+               >
+                 <Shipper />
+                 <p
+                   onClick={handlePlus}
+                   className={`${cx("load")}  ${
+                     show ? cx("hide") : cx("show")
+                   }`}
+                 >
+                   {"<<< Xem thêm >>>"}
+                 </p>
+                 <p
+                   onClick={handlePlus}
+                   className={`${cx("load")} ${show ? cx("show") : cx("hide")}`}
+                 >
+                   {"<<< Thu gọn >>>"}
+                 </p>
+               </div>
+               {/* //// */}
+               <div
+                 className={`${cx("desc-product")} ${
+                   isDescProduct ? cx("un-disable") : cx("disable")
+                 } ${show ? cx("lange") : cx("small")}`}
+               >
+                 <p
+                   className={`${cx("text")}`}
+                   dangerouslySetInnerHTML={{
+                     __html: data.content,
+                   }}
+                 ></p>
+                 <p
+                   onClick={handlePlus}
+                   className={`${cx("load")}  ${
+                     show ? cx("hide") : cx("show")
+                   }`}
+                 >
+                   {"<<< Xem thêm >>>"}
+                 </p>
+                 <p
+                   onClick={handlePlus}
+                   className={`${cx("load")} ${show ? cx("show") : cx("hide")}`}
+                 >
+                   {"<<< Thu gọn >>>"}
+                 </p>
+               </div>
+             </div>
+           </div>
          </div>
-      </Fragment>
+       )}
+       <div className={cx("may-like")}>
+         <div className={cx("title")}>
+           <h2>Có thể bạn thích</h2>
+           <p></p>
+         </div>
+         <div className="row">
+           {listProduct &&
+             listProduct.map((item, index) => {
+               return (
+                 <div className="col l-4 m-4 c-12">
+                   <ItemProduct item={item} key={index} />
+                 </div>
+               );
+             })}
+         </div>
+       </div>
+     </Fragment>
    );
 }
 

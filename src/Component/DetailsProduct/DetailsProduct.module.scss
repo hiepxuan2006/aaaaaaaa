@@ -1,22 +1,24 @@
 .wrapper {
    width: 100%;
    overflow: hidden;
-   p + p {
+p+p {
       margin-top: 20px;
    }
 }
+
 .infor {
    width: 100%;
    display: flex;
    justify-content: space-between;
    gap: 32px;
-   &::after {
-   }
+&::after {}
 }
+
 .image {
    height: 240px;
    width: 240px;
    overflow: hidden;
+
    img {
       height: 100%;
       width: 100%;
@@ -25,21 +27,25 @@
       border-radius: 20px;
    }
 }
+
 .content {
    flex: 1;
    user-select: none;
 }
+
 .heading {
    font-size: 1.6rem;
    margin-bottom: 20px;
    padding: 8px 0;
    border-bottom: 1px solid rgb(204, 204, 204);
 }
+
 .action-buy {
    display: flex;
    align-items: center;
    justify-content: space-between;
    position: relative;
+
    &::after {
       content: '';
       position: absolute;
@@ -49,12 +55,14 @@
       border-bottom: 2px solid rgb(204 204 204);
    }
 }
+
 .btn-quantity {
    display: flex;
    gap: 12px;
    align-items: center;
    user-select: none;
 }
+
 .minus,
 .plus {
    padding: 6px;
@@ -62,12 +70,14 @@
    border-radius: 10px;
    background-color: var(--primary-color);
    box-shadow: rgb(204 204 204) 0px 0px 10px;
+
    &:hover {
       cursor: pointer;
       transform: scale(1.1);
       transition: all ease-in-out 0.3s;
    }
 }
+
 .quantity {
    padding: 4px 6px;
    border: 2px solid rgb(204, 204, 204);
@@ -84,6 +94,7 @@
    font-weight: 600;
    margin-bottom: 20px;
 }
+
 .action-btn {
    display: flex;
    gap: 10px;
@@ -100,29 +111,35 @@
       color: var(--white);
    }
 }
+
 .add-cart {
    background-color: var(--primary-color);
 }
+
 .buy {
    background-color: #03a11df5;
 }
+
 .category {
    margin-top: 40px;
    display: flex;
    align-items: center;
    gap: 12px;
 }
+
 // ///////////////////////
 .desc {
    margin-top: 100px;
    position: relative;
    margin-bottom: 40px;
 }
+
 .action {
    display: flex;
    align-items: center;
    gap: 16px;
    padding-bottom: 20px;
+
    button {
       padding: 8px 12px;
       border-radius: 10px;
@@ -132,12 +149,15 @@
       font-size: 1.6rem;
    }
 }
+
 .active {
    background-color: var(--primary-color);
 }
+
 .un-active {
    background-color: #03a11df5;
 }
+
 .desc-text {
    margin: 20px 10px;
    padding: 20px 12px;
@@ -149,6 +169,7 @@
    line-height: 1.6;
    width: 100%;
 }
+
 .load {
    display: none;
    position: absolute;
@@ -159,18 +180,22 @@
    cursor: pointer;
    padding: 6px 12px;
 }
+
 table {
    font-family: arial, sans-serif;
    border-collapse: collapse;
    width: 100%;
    margin: 20px 0;
 }
+
 .wrapper .disable {
    display: none;
 }
+
 .un-disable {
    display: block;
 }
+
 .wrapper td,
 .wrapper th {
    border: 1px solid #dddddd;
@@ -181,12 +206,14 @@ table {
 .text {
    padding: 0 20px;
 }
+
 .title {
    display: flex;
    align-items: center;
    justify-content: center;
    margin: 10px 0 30px 0;
    position: relative;
+
    p {
       height: 3px;
       flex: 1;
@@ -195,6 +222,7 @@ table {
       display: block;
       border: 1px solid rgb(204 204 204);
    }
+
    h2 {
       position: absolute;
       background-color: var(--primary-color);
@@ -206,6 +234,7 @@ table {
       font-size: 2.6rem;
    }
 }
+
 @media (min-width: 740px) and (max-width: 1023px) {
    .infor {
       width: 1020px;
@@ -221,19 +250,76 @@ table {
    .load {
       display: block;
    }
+
    .lange {
       min-height: 600;
       transition: all ease-in 0.3s;
    }
+
    .small {
       height: 300px;
       overflow: hidden;
       transition: all ease-in 0.3s;
    }
+
    .hide {
       display: none;
    }
+
    .show {
       display: block;
+   }
+}
+
+@media (max-width:395px) {
+   .wrapper {
+      overflow: hidden;
+      padding-top: 20px;
+
+   }
+
+   .infor {
+      align-items: center;
+      flex-direction: column;
+   }
+
+   .may-like {
+      width: 100vw;
+      display: none;
+   }
+
+   .image {
+      width: 100%;
+      height: 100%;
+   }
+
+   .action-buy {
+
+      flex-direction: column;
+      padding: 20px 0;
+      align-items: flex-start;
+   }
+
+   .category {
+      margin-top: 20px;
+   }
+
+   .text {
+      padding: 0;
+   }
+
+   .desc {
+      margin-bottom: 0;
+   }
+
+   .desc-text {
+      border-radius: 0%;
+      height: 400px;
+      margin: 0;
+      padding: 0 0 20px 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      box-shadow: none;
+
    }
 }

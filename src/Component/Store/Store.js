@@ -1,9 +1,7 @@
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { ProductService } from '~/service';
+import classNames from "classnames/bind";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { ProductService } from "~/service";
 import LazyLoad from "../LazyLoad";
 import ItemProduct from "../ListProduct/ItemProduct";
 import Pagination from "../Pagination";

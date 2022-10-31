@@ -5,11 +5,17 @@
 }
 .container {
     margin-top: 40px;
-    width: 1200px;
+    width: 1280px;
     padding: 0 24px;
 }
 @media (min-width: 1024px) and (max-width: 1239px) {
     .container {
         width: 1024px;
+    }
+}
+@media (max-width:395px) {
+    .container {
+        width: 100vw;
+        padding: 0 12px;
     }
 }
