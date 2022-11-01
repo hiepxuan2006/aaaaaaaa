@@ -52,7 +52,10 @@ function SideBar({ type }) {
               return (
                 <li key={index}>
                   <Link className={cx("item")} to={`/cua-hang/${item.slug}`}>
-                    <FontAwesomeIcon icon={faAngleRight} />
+                    <FontAwesomeIcon
+                      icon={faAngleRight}
+                      className={cx("hidden-mobile")}
+                    />
                     <p>{item.name}</p>
                   </Link>
                 </li>
@@ -61,7 +64,7 @@ function SideBar({ type }) {
           </ul>
         )}
       </div>
-      <div className={cx("list-category")}>
+      <div className={cx("list-category", "list-blog")}>
         <div className={cx("title")}>
           <h3>Blog chia sẻ</h3>
         </div>

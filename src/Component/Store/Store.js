@@ -6,7 +6,6 @@ import LazyLoad from "../LazyLoad";
 import ItemProduct from "../ListProduct/ItemProduct";
 import Pagination from "../Pagination";
 import style from "./Store.module.scss";
-
 const cx = classNames.bind(style);
 
 function Store() {

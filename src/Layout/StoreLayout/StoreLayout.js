@@ -13,24 +13,24 @@ function StoreLayout({ children, data }) {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <div className={theme}>
-            <div className={cx('wrapper')}>
-                <Header />
-                <div className={cx('container')}>
-                    <div className="row">
-                        <div className="col l-3 m-2 c-0">
-                            <div className={cx('left')}>
-                                <SideBar type={data} />
-                            </div>
-                        </div>
-                        <div className="col l-9 m-10 c-12">
-                            <div className="">{children}</div>
-                        </div>
-                    </div>
+      <div className={theme}>
+        <div className={cx("wrapper")}>
+          <Header />
+          <div className={cx("container")}>
+            <div className="row column">
+              <div className="col l-3 m-2 c-12">
+                <div className={cx("left")}>
+                  <SideBar type={data} />
                 </div>
-                <Footer />
+              </div>
+              <div className="col l-9 m-10 c-12">
+                <div className="">{children}</div>
+              </div>
             </div>
+          </div>
+          <Footer />
         </div>
+      </div>
     );
 }
 
