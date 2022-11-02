@@ -12,6 +12,7 @@ function ItemProduct({ item }) {
   const value = useContext(DataContext);
   const [quantity, setQuantity] = useState(1);
   const handleQty = (type) => {
+    // eslint-disable-next-line default-case
     switch (type) {
       case "minus":
         if (quantity > 1) {

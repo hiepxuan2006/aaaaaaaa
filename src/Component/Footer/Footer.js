@@ -18,13 +18,15 @@ function Footer() {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              className="col l-3"
+              className="col l-3 m-3 c-3"
             >
-              <img
-                style={{ hight: "150px ", width: "150px" }}
+              <div className={cx('image')}>
+                <img
                 src="https://mighty-dusk-66790.herokuapp.com/upload/huu-co.png"
                 alt=""
               />
+              </div>
+
             </div>
             <div
               style={{
@@ -37,13 +39,15 @@ function Footer() {
                 justifyContent: "center",
                 overflow: "hidden",
               }}
-              className="col l-3"
+              className="col l-3 m-3 c-3"
             >
-              <img
-                style={{ hight: "150px ", width: "150px" }}
+              <div className={cx('image')}>
+                <img
                 src="https://mighty-dusk-66790.herokuapp.com/upload/tieu-chuan-vn.png"
                 alt=""
               />
+              </div>
+
             </div>
             <div
               style={{
@@ -55,13 +59,15 @@ function Footer() {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              className="col l-3"
+              className="col l-3 m-3 c-3"
             >
-              <img
-                style={{ hight: "150px ", width: "150px" }}
+              <div className={cx('image')}>
+                <img
                 src="https://mighty-dusk-66790.herokuapp.com/upload/tieu-chuan.png"
                 alt=""
               />
+              </div>
+
             </div>
             <div
               style={{
@@ -73,13 +79,15 @@ function Footer() {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              className="col l-3"
+              className="col l-3 m-3 c-3"
             >
-              <img
-                style={{ hight: "150px ", width: "150px" }}
+              <div className={cx('image')}>
+                <img
                 src="https://mighty-dusk-66790.herokuapp.com/upload/my.png"
                 alt=""
               />
+              </div>
+
             </div>
           </div>
         </div>
