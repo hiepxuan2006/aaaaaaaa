@@ -68,6 +68,7 @@ function Register({ setShowRegister, setShowConfirm, setEmailVerify }) {
            setLoading(true);
            const results = await AcountService.register(ValueForm);
            setLoading(false);
+           console.log('======================', results);
            if (results.success) {
              setEmailVerify(results.data.email);
              setShowConfirm(true);

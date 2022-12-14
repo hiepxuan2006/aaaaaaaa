@@ -25,6 +25,7 @@ export const DataProvider = (props) => {
       const check = cart.every((item) => {
          return item.product.id !== product.id;
       });
+      console.log('++++++++++++++++++', user);
       if (check) {
          // product.quantity = quantity;
          cart.push({ product, quantity });

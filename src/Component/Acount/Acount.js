@@ -15,7 +15,6 @@ function Acount() {
    const [emailVerify, setEmailVerify] = useState('');
    const { showAcount, setShowAcount } = useContext(DataContext);
    const phone = require('~/assets/img/login.png');
-
    return (
       <div className={`${cx('model')} ${showAcount ? ' ' : cx('close')}`}>
          <div

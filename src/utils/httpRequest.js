@@ -6,13 +6,13 @@ import queryString from 'query-string';
 //    paramsSerializer: (params) => queryString.stringify(params),
 // });
 const httpRequest = axios.create({
-   // baseURL: 'http://localhost:8080/api/',
-   baseURL: 'https://hx-farm.herokuapp.com/api/',
+    baseURL: 'http://localhost:8080/api/',
+    // baseURL: 'https://hx-farm.herokuapp.com/api/',
 
-   // headers: {
-   //    'content-type': 'application.json',
-   // },
-   paramsSerializer: (params) => queryString.stringify(params),
+    // headers: {
+    //    'content-type': 'application.json',
+    // },
+    paramsSerializer: (params) => queryString.stringify(params),
 });
 
 export const get = async (path, options = {}) => {
